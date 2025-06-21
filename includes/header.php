@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Jonathan Hendrix - Portfolio</title>
+    <link rel="icon" type="image/png" href="/pics/favicon.png"> <!-- adds page tab icon -->
     <!-- FontAwesome for icons -->
     <script src="https://kit.fontawesome.com/b9be0d536e.js" crossorigin="anonymous"></script>
     <!-- Custom CSS & JS -->
-    <link rel="stylesheet" href="/portfolio/public/css/style.css">
-    <script src="/portfolio/public/js/index.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/index.js" defer></script>
+
 </head>
 <body>
 
@@ -24,7 +26,7 @@
             </p>
         </div>
         <div class="hero-image">
-            <img src="/portfolio/public/pics/profile.png" alt="Jonathan Hendrix" id="Navbar_Logo" />
+            <img src="/pics/profile.png" alt="Jonathan Hendrix" id="Navbar_Logo" />
         </div>
     </div>
 
@@ -41,6 +43,6 @@
         <li><a href="#about">About Me</a></li>
         <li><a href="#projects">My Work</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact Me</a></li>
     </ul>
 </nav>
