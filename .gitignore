@@ -3,6 +3,16 @@
 /vendor/*
 /config/app.php
 .idea/
+# IDE-specific
+*.iml
+.qodo/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+
+
 
 /tmp/cache/models/*
 !/tmp/cache/models/empty
