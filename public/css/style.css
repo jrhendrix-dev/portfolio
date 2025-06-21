@@ -293,9 +293,9 @@ section ul {
 .projects-grid {
     display: flex;
     justify-content: center;
-    gap: 2rem; /* spacing between cards */
+    gap: 5rem; /* spacing between cards */
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto; /* centers the grid */
     padding: 2rem;
 }
@@ -306,14 +306,24 @@ section ul {
     align-items: flex-start;
     background-color: #111;
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding: 3rem;
     width: 100%;
     max-width: 550px;
     box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 transparent;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4); /* blue glow */
+
+}
+
+/* Project title glows only when card is hovered */
+.project-card:hover h3 {
+    color: #4dabf7;
+    text-shadow: 0 0 8px rgba(77, 171, 247, 0.8);
 }
 
 .project-card img {
@@ -336,6 +346,8 @@ section ul {
     max-width: 800px;
     margin: auto;
 }
+
+
 
 .project-links a {
     color: #3da9fc;
