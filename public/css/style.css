@@ -22,7 +22,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* === HERO === */
+/* ============================== HERO =========================================== */
 .hero {
     height: 100vh;
     background: radial-gradient(circle at top right, #00aeef, #000000 45%);
@@ -106,7 +106,7 @@ html {
 }
 
 
-/* === Scrolling buttons === */
+/* ============================================= Scrolling buttons ========================================= */
 .scroll-button{
     display: flex;
     justify-content: center;
@@ -133,7 +133,7 @@ a:hover {
 }
 }
 
-/* === Floating Nav === */
+/* ========================================== Floating Nav ============================================ */
 .floating-nav {
     position: fixed;
     bottom: 3rem;
@@ -179,7 +179,7 @@ a:hover {
     border-radius: 8px;
 }
 
-/* === Content Sections === */
+/* =============================== Content Sections =========================================== */
 main {
     padding: 4rem 2rem;
 }
@@ -273,10 +273,84 @@ section ul {
     width: 1.2rem;
 }
 
+/* =============================== PROJECTS SECTION =======================================*/
+.projects-section {
+    padding: 60px 40px;
+    background-color: #000;
+    color: #fff;
+    text-align: left; /* <-- important */
+}
+
+.projects-section h2 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: #00AEEF;
+    text-align: left;      /* <-- important */
+    padding-left: 10rem;    /* match with About Me spacing if needed */
+}
+
+
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* spacing between cards */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto; /* centers the grid */
+    padding: 2rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #111;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 550px;
+    box-sizing: border-box;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.project-card h3 {
+    color: #fff;
+    margin: 0 0 10px;
+}
+
+.project-card h3,
+.project-card p {
+    color: #ddd;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+.project-links a {
+    color: #3da9fc;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
 
 
 
-/* === FOOTER === */
+/* =============================== FOOTER ================================================ */
 footer {
     text-align: right;
     padding: 2rem;
