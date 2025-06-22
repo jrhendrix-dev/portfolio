@@ -1,13 +1,21 @@
-// 2. Get floating nav
+
 const floatingNav = document.getElementById("floatingNav");
 
-// 3. Scroll behavior
-window.addEventListener("scroll", () => {
-    if (window.scrollY > window.innerHeight / 2) {
-        floatingNav.classList.add("hide");
-        stickyNav.classList.add("show");
-    } else {
-        floatingNav.classList.remove("hide");
-        stickyNav.classList.remove("show");
+const stickyNav = document.querySelector('.floating-nav');
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const stickyNav = document.querySelector('.floating-nav');
+
+    if (stickyNav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                stickyNav.classList.add('active');
+            } else {
+                stickyNav.classList.remove('active');
+            }
+        });
     }
 });
+
+
