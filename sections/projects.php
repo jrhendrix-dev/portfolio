@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div class="scroll-button">
+    <div class="scroll-button" id="scroll-button-projects">
         <a href="#skills">
             <i class="fa-solid fa-circle-chevron-down"></i>
         </a>

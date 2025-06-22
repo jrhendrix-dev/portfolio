@@ -11,7 +11,7 @@
     <p>
         I'm fluent in English and Spanish, and I'm currently open to junior developer opportunities or internships that allow me to grow within a collaborative, high-quality engineering environment.
     </p>
-    <div class="scroll-button">
+    <div class="scroll-button" id="scroll-button-about">
         <a href="#projects">
             <i class="fa-solid fa-circle-chevron-down"></i>
         </a>
