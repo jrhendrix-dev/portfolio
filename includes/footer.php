@@ -1,33 +1,32 @@
 <footer>
     <div class="scroll-button">
-        <p style="place-self: center">
-            <a href="#" style="font-size: 2.5rem">
-                <i class="fa-solid fa-circle-chevron-up"></i>
+        <p class="scroll-center">
+            <a href="#" class="scroll-top-link" aria-label="Back to top">
+                <i class="fa-solid fa-circle-chevron-up" aria-hidden="true"></i>
+                <span class="sr-only">Back to top</span>
             </a>
         </p>
     </div>
 
     <div class="social-icons" id="contact">
         <h2>Contact me:</h2>
-        <a href="https://github.com/jrhendrix-dev" target="_blank" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/jrhendrix-dev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
         </a>
-        <a href="https://linkedin.com/in/jonathan-hendrix-dev" target="_blank" aria-label="LinkedIn">
-            <i class="fa fa-linkedin"></i>
+        <a href="https://linkedin.com/in/jonathan-hendrix-dev" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
         </a>
 
         <p>
-            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             <a href="mailto:jrhendrixdev@gmail.com">jrhendrixdev@gmail.com</a><br>
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
             <a href="tel:+34635507365">+34 635 507 365</a>
         </p>
-
     </div>
 
     <br>
-    <p>© 2025 Jonathan Hendrix. Code licensed under the <a href="/LICENSE.md" target="_blank">MIT License</a>. </p>
+    <p>© 2025 Jonathan Hendrix. Code licensed under the <a href="/LICENSE.md" target="_blank" rel="noopener noreferrer">MIT License</a>.</p>
 </footer>
-
 </body>
 </html>
