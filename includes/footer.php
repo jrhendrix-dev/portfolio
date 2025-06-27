@@ -1,18 +1,10 @@
 <footer>
-    <div class="scroll-button">
-        <p class="scroll-center">
-            <a href="#" class="scroll-top-link" aria-label="Back to top">
-                <i class="fa-solid fa-circle-chevron-up" aria-hidden="true"></i>
-                <span class="sr-only">Back to top</span>
-            </a>
-        </p>
-    </div>
 
     <div class="social-icons" id="contact">
         <h2>Contact me:</h2>
         <a href="https://github.com/jrhendrix-dev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-        </a>
+            <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+
         <a href="https://linkedin.com/in/jonathan-hendrix-dev" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i class="fa fa-linkedin" aria-hidden="true"></i>
         </a>

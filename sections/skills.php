@@ -1,4 +1,5 @@
 <section id="skills">
+    <div id="skills-position">position</div>
     <h2>Skills &amp; Technologies</h2>
     <div class="skills-grid">
         <div class="skills-column">

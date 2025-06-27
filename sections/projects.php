@@ -1,4 +1,5 @@
 <section id="projects" class="projects-section">
+    <div id="projects-position">position</div>
     <h2>Projects</h2>
     <div class="projects-grid">
         <!-- Project 1 -->
@@ -21,12 +22,5 @@
                 <a href="https://businessfirstacademy.net/" target="_blank" rel="noopener noreferrer">Live Site</a>
             </div>
         </div>
-    </div>
-
-    <div class="scroll-button" id="scroll-button-projects">
-        <a href="#skills" aria-label="Scroll to Skills">
-            <i class="fa-solid fa-circle-chevron-down" aria-hidden="true"></i>
-            <span class="sr-only">Scroll to Skills</span>
-        </a>
     </div>
 </section>
