@@ -6,7 +6,7 @@
             <h3><i class="fas fa-code" aria-hidden="true"></i> Frontend</h3>
             <ul>
                 <li><i class="fab fa-html5" aria-hidden="true"></i> <strong>HTML5 &amp; CSS3</strong></li>
-                <li><i class="fab fa-js-square" aria-hidden="true"></i> JavaScript (Vanilla)</li>
+                <li><i class="fab fa-js-square" aria-hidden="true"></i> JavaScript (Vanilla), jQuery</li>
                 <li><i class="fab fa-bootstrap" aria-hidden="true"></i> Bootstrap</li>
                 <li><i class="fab fa-react" aria-hidden="true"></i> React (Basics)</li>
             </ul>
