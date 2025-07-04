@@ -65,10 +65,49 @@ function scrollToNextSection() {
 
 window.addEventListener("scroll", updateArrowDirection); //on scroll
 
+function toggleDemo() {
+    const demo = document.getElementById('live-demo');
+    const btn = document.getElementById('demoButton');
+    const isOpen = demo.classList.contains('open');
+
+    if (!isOpen) {
+        if (!demo.dataset.loaded) {
+            const iframe = document.createElement('iframe');
+            iframe.src = "https://task-manager-api-4axd.onrender.com/tasks";
+            iframe.width = "100%";
+            iframe.height = "600";
+            iframe.frameBorder = "0";
+            iframe.title = "Live Task Manager";
+            iframe.style.marginTop = "1rem";
+            iframe.style.borderRadius = "8px";
+
+            demo.appendChild(iframe);
+            demo.dataset.loaded = 'true';
+        }
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                demo.classList.add('open');
+            });
+        });
+    } else {
+        demo.classList.remove('open');
+    }
+
+    btn.textContent = !isOpen ? '▮ Hide Live Demo' : '▶ Show Live Demo';
+}
+
+
+
 //Page Load events
 document.addEventListener("DOMContentLoaded", () => {
     //SCROLLING
     const btn = document.getElementById("scroll-button");
+    const btnDemo = document.getElementById("demoButton");
+    if (btnDemo) {
+        btnDemo.addEventListener("click", toggleDemo); // ✅ now toggleDemo is defined
+    }
+
     if (btn) {
         btn.addEventListener("click", scrollToNextSection);
     }
@@ -91,6 +130,14 @@ document.addEventListener("DOMContentLoaded", () => {
             nav.classList.remove("active");
         });
     });
+
+    //Live Spring/Boot Demo:
+
+
+
+
+
+
 
 });
 
