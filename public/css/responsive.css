@@ -223,18 +223,20 @@
         padding: 0;
     }
     .projects-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
         width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
     }
+
     .project-card {
-        flex-direction: column;
-        align-items: center;
-        padding: 0.2rem;
         width: 100%;
-        max-width: 400px;
+        max-width: 100%;
+        margin: 0; /* Optional: reset any margins if needed */
+        padding: 0.5rem; /* Or adjust */
+        box-sizing: border-box;
     }
+
     .project-card h3,
     .project-card p {
         font-size: 1rem;

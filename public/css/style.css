@@ -445,7 +445,7 @@ main {
 }
 
 section {
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     padding-left:1%;
     max-width: 70%;
     margin-left: auto;
@@ -497,14 +497,14 @@ section ul {
 }
 
 #about-position{
-    margin-top: 15vw;
-    margin-bottom: 4vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
     color:transparent;
 }
 
 #skills-position{
-    margin-top: 15vw;
-    margin-bottom: 6vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
     color:transparent;
 }
 
@@ -557,8 +557,8 @@ section ul {
    9. PROJECTS SECTION
    ========================================================================== */
 #projects-position{
-    margin-top: 15vw;
-    margin-bottom: 4vw;
+    margin-top: 9vw;
+    margin-bottom: 2vw;
     color:transparent;
 }
 
@@ -588,6 +588,74 @@ section ul {
     padding: 2rem;
 }
 
+#demoButton{
+ font-weight:bolder;
+}
+
+#live-demo {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.4s ease;
+    padding:1.2rem;
+    border-radius:0.5rem;
+}
+
+#live-demo.open {
+    margin-top:1rem;
+    max-height: 1500px;
+    opacity: 1;
+    overflow: hidden; /* <- keep this to avoid abrupt pops */
+}
+
+#live-demo.open:hover {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+.demo-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(17, 17, 17, 0.71);
+    border-radius: 1rem;
+    padding: 3rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 transparent;
+}
+.demo-card.open {
+    max-height: 700px; /* More than iframe height */
+    opacity: 1;
+}
+.demo-card:hover{
+    transform: scale(1.01);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+}
+
+
+.project-links button {
+    background-color: #0d1117; /* dark background for contrast */
+    color: #c9d1d9; /* soft light text color */
+    border: 1px solid #58a6ff; /* subtle blue border */
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 5px rgba(88, 166, 255, 0.3);
+}
+
+.project-links button:hover {
+    background-color: #161b22;
+    color: #58a6ff;
+    border-color: #58a6ff;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+
 .project-card {
     display: flex;
     flex-direction: column;
@@ -596,7 +664,7 @@ section ul {
     border-radius: 1rem;
     padding: 3rem;
     width: 100%;
-    max-width: 40%;
+    max-width: 100%;
     box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 0 transparent;
@@ -647,6 +715,9 @@ section ul {
 .project-links a:hover {
     text-decoration: underline;
 }
+
+
+
 
 /* ==========================================================================
    10. FOOTER & CONTACT
