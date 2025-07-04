@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
     <!-- Custom CSS & JS -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/responsive.css">
-    <script src="/js/index.js"></script>
+    <link rel="stylesheet" href="/../test-live/public/css/style.css">
+    <link rel="stylesheet" href="/../test-live/public/css/responsive.css">
+    <script src="/../test-live/public/js/index.js"></script>
+
 
 </head>
 <body>
@@ -30,7 +31,6 @@
                 🇪🇸
             </button>
             </a>
-
             <h1>FULL STACK DEVELOPER</h1>
             <p class="subheadline">
                 My name is Jonathan Hendrix, I'm a <strong>Full-Stack Developer</strong> based in Seville, Spain, focused on building scalable and maintainable web applications.

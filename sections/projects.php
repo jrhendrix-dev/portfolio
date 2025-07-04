@@ -8,8 +8,10 @@
             <h3>Task Manager</h3>
             <p>Spring Boot web app with MySQL. Create, list, and delete tasks using MVC architecture.</p>
             <div class="project-links">
-                <a href="https://github.com/jrhendrix-dev/spring-task-manager" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                <a href="https://github.com/jrhendrix-dev/spring-task-manager" target="_blank" rel="noopener noreferrer">GitHub</a> |
+                <button id="demoButton">▶ Show Live Demo</button>
             </div>
+            <div class="demo-card" id="live-demo"></div>
         </div>
 
         <!-- Project 2 -->
@@ -23,4 +25,5 @@
             </div>
         </div>
     </div>
+
 </section>

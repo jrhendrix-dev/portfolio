@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../includes/config-include.php';
 include_once __DIR__ . '/../includes/header-es.php';
 ?>
 

@@ -20,5 +20,6 @@
     <br>
     <p>© 2025 Jonathan Hendrix. Code licensed under the <a href="/LICENSE.md" target="_blank" rel="noopener noreferrer">MIT License</a>.</p>
 </footer>
+
 </body>
 </html>
