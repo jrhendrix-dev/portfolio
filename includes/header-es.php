@@ -29,9 +29,9 @@
                 </button>
             </a>
 
-            <h1>DESARROLLADOR FULL STACK</h1>
+            <h1>DESARROLLADOR BACKEND</h1>
             <p class="subheadline">
-                Me llamo Jonathan Hendrix, soy <strong>Desarrollador Full-Stack</strong> radicado en Sevilla, España, enfocado en crear aplicaciones web escalables y mantenibles.
+                Me llamo Jonathan Hendrix, soy un <strong>Desarrollador Backend</strong> ubicado en Sevilla, España, enfocado en crear aplicaciones web escalables y mantenibles.
                 <br><br>
                 <button class="explore-btn">
                     <a href="https://acrobat.adobe.com/id/urn:aaid:sc:eu:15b94d16-72e0-44f6-be5e-e1e90dbaaa62" class="resume-link">

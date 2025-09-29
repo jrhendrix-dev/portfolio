@@ -9,7 +9,9 @@
             <p>Aplicación web en Spring Boot con MySQL. Permite crear, listar y eliminar tareas utilizando arquitectura MVC.</p>
             <div class="project-links">
                 <a href="https://github.com/jrhendrix-dev/spring-task-manager" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+                <button id="demoButton">▶ Ver Demo Real</button>
             </div>
+            <div class="demo-card" id="live-demo"></div>
         </div>
 
         <!-- Proyecto 2 -->
