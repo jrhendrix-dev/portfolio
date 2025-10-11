@@ -5,7 +5,7 @@
     <title>Jonathan Hendrix - Portfolio</title>
     <meta name="description" content="Portfolio of Jonathan Hendrix, Full-Stack Developer based in Seville, Spain.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="/pics/favicon.png">
+    <link rel="icon" type="image/png" href="/logo/favicon-48.png">
     <!-- FontAwesome for icons -->
     <script src="https://kit.fontawesome.com/b9be0d536e.js" crossorigin="anonymous"></script>
     <!-- stylesheet for equalizing all default element rendering -->
@@ -26,12 +26,11 @@
 <header class="hero" id="top">
     <div class="hero-content">
         <div class="hero-text">
-            <a href="index-es.php" aria-label="Go to spanish version">
-            <button class="flag-button language-switcher" aria-label="Switch to Spanish">
-                🇪🇸
-            </button>
-            </a>
-            <h1>BACKEND DEVELOPER</h1>
+
+            <h1 class="headline-with-logo">
+                <img src="/logo/noBgColor.svg" alt="JH logo" height="250px" width="250px">
+                BACKEND DEVELOPER
+            </h1>
             <p class="subheadline">
                 My name is Jonathan Hendrix, I'm a <strong>Backend Developer</strong> based in Seville, Spain, focused on building scalable and maintainable web applications.
                 <br><br>
@@ -57,11 +56,21 @@
 
 <nav class="floating-nav" id="floatingNav" role="navigation" aria-label="Main Navigation">
     <ul>
-        <li class="active"><a href="#">JONATHAN HENDRIX</a></li>
+        <li>
+            <a href="#"><img src="/logo/noBgColor.svg" alt="JH logo" width="48" height="48" /></a>
+        </li>
+        <li>
+            <a href="#">Top</a>
+        </li>
         <li><a href="#about">About Me</a></li>
         <li><a href="#projects-position">My Work</a></li>
         <li><a href="#skills-position">Skills</a></li>
         <li><a href="#contact">Contact Me</a></li>
+        <li class="nav-lang">
+            <a href="index-es.php" aria-label="Cambiar a español">
+                <button class="flag-inline" type="button">🇪🇸</button>
+            </a>
+        </li>
     </ul>
 </nav>
 
@@ -83,6 +92,10 @@
 <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
 
 <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <a class="brand" href="#top" aria-label="Back to top">
+        <img src="/logo/noBgColor.svg" alt="JH logo"/>
+        <span class="sr-only">Home</span>
+    </a>
     <a href="#">TOP</a>
     <a href="#about">About Me</a>
     <a href="#projects-position">My Work</a>
