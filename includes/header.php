@@ -28,7 +28,7 @@
         <div class="hero-text">
 
             <h1 class="headline-with-logo">
-                <img src="/logo/noBgColor.svg" alt="JH logo" height="250px" width="250px">
+                <img src="/logo/noBgColor.svg" alt="JH logo" class="headline-logo">
                 BACKEND DEVELOPER
             </h1>
             <p class="subheadline">
@@ -101,5 +101,8 @@
     <a href="#projects-position">My Work</a>
     <a href="#skills-position">Skills</a>
     <a href="#contact">Contact Me</a>
+    <a href="index-es.php" aria-label="Cambiar a español">
+        <button class="flag-inline" type="button">🇪🇸</button>
+    </a>
 </nav>
 
