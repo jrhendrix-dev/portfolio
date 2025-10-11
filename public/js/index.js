@@ -131,13 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    //Live Spring/Boot Demo:
-
-
-
-
-
-
 
 });
 

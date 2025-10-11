@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class="skills-column">
-            <h3><i class="fas fa-tools" aria-hidden="true"></i> Herramientas y Otros</h3>
+            <h3><i class="fas fa-tools" aria-hidden="true"></i> Herramientas</h3>
             <ul>
                 <li><i class="fab fa-git-alt" aria-hidden="true"></i> Git y GitHub</li>
                 <li><i class="fas fa-laptop-code" aria-hidden="true"></i> IntelliJ, VS Code</li>

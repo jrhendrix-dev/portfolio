@@ -34,7 +34,7 @@
                 Me llamo Jonathan Hendrix, soy un <strong>Desarrollador Backend</strong> ubicado en Sevilla, España, enfocado en crear aplicaciones web escalables y mantenibles.
                 <br><br>
                 <button class="explore-btn">
-                    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:eu:15b94d16-72e0-44f6-be5e-e1e90dbaaa62" class="resume-link">
+                    <a href="https://jonathan-hendrix.dev/docs/CV-Jonathan.pdf" class="resume-link">
                         Mi CV
                         <svg class="arrow-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
                             <path

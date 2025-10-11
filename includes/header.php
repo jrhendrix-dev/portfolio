@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
     <!-- Custom CSS & JS -->
-    <link rel="stylesheet" href="/../test-live/public/css/style.css">
-    <link rel="stylesheet" href="/../test-live/public/css/responsive.css">
-    <script src="/../test-live/public/js/index.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <script src="/js/index.js"></script>
 
 
 </head>
@@ -36,7 +36,7 @@
                 My name is Jonathan Hendrix, I'm a <strong>Backend Developer</strong> based in Seville, Spain, focused on building scalable and maintainable web applications.
                 <br><br>
                 <button class="explore-btn">
-                    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:eu:15b94d16-72e0-44f6-be5e-e1e90dbaaa62" class="resume-link">
+                    <a href="https://jonathan-hendrix.dev/docs/CV-Jonathan-English.pdf" class="resume-link">
                     My CV
                     <svg class="arrow-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
                         <path
