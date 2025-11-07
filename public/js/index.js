@@ -11,25 +11,24 @@ const sections = ["#top","#about-position", "#projects-position", "#skills-posit
 let currentIndex = 0;
 
 function getCurrentSectionIndex() {
-    const scrollPosition = window.scrollY + window.innerHeight / 2;
-    let index = 0;
+    const mid = window.scrollY + window.innerHeight / 2;
 
-    /*
-     loops through the sections array. Checks if the viewport (scroll position) is below the top of
-     the current section. If it is, sets the index to this section.
-     */
-    sections.forEach((id, i) => {
-        const element = document.querySelector(id);
-        if (element) {
-            const offset = element.offsetTop;
-            if (scrollPosition >= offset) {
-                index = i;
-            }
+    let index = 0;
+    sections.forEach((sel, i) => {
+        const el = document.querySelector(sel);
+        if (!el) return;
+
+        // robust absolute top that matches what the user sees
+        const rectTop = el.getBoundingClientRect().top + window.scrollY;
+
+        if (mid >= rectTop) {
+            index = i;
         }
     });
 
     return index;
 }
+
 
 function updateArrowDirection() {
     const arrow = document.querySelector("#scroll-button svg");

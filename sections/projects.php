@@ -1,5 +1,5 @@
 <section id="projects" class="projects-section">
-    <div id="projects-position">position</div>
+    <div id="projects-position"></div>
     <h2>Projects</h2>
     <div class="projects-grid">
         <!-- Project 1 -->

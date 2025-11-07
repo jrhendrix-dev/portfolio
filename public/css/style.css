@@ -9,9 +9,29 @@
 /* ==========================================================================
    2. BASE STYLES & RESETS
    ========================================================================== */
+:root{
+    --brand: #00AEEF;
+    --brand-strong: color-mix(in srgb, var(--brand) 82%, white 18%);
+    --bg-0: #05080b;
+    --bg-1: #0b1118;
+
+    /* display sizing */
+    --title-size: clamp(2.8rem, 6vw, 5rem);
+    --hero-title-size: clamp(3.2rem, 8vw, 6.5rem);
+
+    /* floating nav offset + anchor offset */
+    --sticky-offset: 8rem;
+
+    /* spacing between hero and About */
+    --about-top-gap: clamp(3rem, 8vw, 10rem);
+
+    --hero-top-gap: clamp(4rem, 9vw, 12rem);  /* controls how far the hero sits from the very top */
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 html{scroll-behavior:smooth}
+
 body{
     font-family:'Segoe UI',Roboto,sans-serif;
     background:#000;color:#dad5d5;font-size:22px;min-height:100vh;overflow-x:hidden;line-height:1.5;
@@ -20,9 +40,60 @@ body{
 .sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}
 
 /* ==========================================================================
+   3. GLOBAL BACKGROUND
+   ========================================================================== */
+.body{
+    min-height:100vh;
+    position:relative;
+    color:#eaf2f8;
+
+    /* Consistent radials: saturated center (no white dot) → soft fade → transparent */
+    background:
+        /* top-left soft wash */
+            radial-gradient(1000px circle at 12% 50%,
+            color-mix(in srgb, var(--brand) 55%, transparent) 0%,
+            color-mix(in srgb, var(--brand) 20%, transparent) 35%,
+            transparent 60%),
+
+                /* bottom-left glow */
+            radial-gradient(900px circle at 12% 80%,
+            color-mix(in srgb, var(--brand) 55%, transparent) 0%,
+            color-mix(in srgb, var(--brand) 20%, transparent) 35%,
+            transparent 60%),
+
+                /* right-side hero glow (this was the one with the white dot) */
+            radial-gradient(900px circle at 90% 65%,
+            color-mix(in srgb, var(--brand) 55%, transparent) 0%,
+            color-mix(in srgb, var(--brand) 20%, transparent) 35%,
+            transparent 60%),
+
+                /* base */
+            linear-gradient(135deg, var(--bg-1) 0%, #081018 40%, var(--bg-0) 100%);
+
+    background-blend-mode: screen, screen, screen, normal;
+}
+
+.body::before{
+    content:"";
+    position:absolute; inset:0; pointer-events:none; opacity:.05; mix-blend-mode:overlay;
+    background-image:
+            url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'>\
+<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter>\
+<rect width='160' height='160' filter='url(%23n)' opacity='0.6'/></svg>");
+    background-size: 160px 160px;
+}
+.body::after{
+    content:"";
+    position:absolute; inset:0; pointer-events:none;
+    background: radial-gradient(1200px circle at 50% 50%,
+    transparent 60%,
+    rgba(0,0,0,.35) 100%);
+}
+
+/* ==========================================================================
    4. HERO SECTION
    ========================================================================== */
-
 .language-switcher{position:fixed;top:1rem;right:1rem;z-index:100}
 
 .flag-button-en{
@@ -32,40 +103,110 @@ body{
 .flag-button-en:hover{transform:scale(1.1);box-shadow:0 6px 16px rgba(0,0,0,.3)}
 .flag-icon{width:100%;height:100%;object-fit:cover;border-radius:50%}
 
+/* was #hero */
 .hero{
-    height:100vh;background:radial-gradient(circle at top right,#00aeef,#000 45%);
-    display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;position:relative;padding:1rem;
+    display:flex;
+    justify-content:center;
+    padding: var(--hero-top-gap) 2rem 2rem; /* top gap knob */
+    color:#ddd;
+    position: relative;
 }
-.hero-content{display:flex;justify-content:center;align-items:center;flex-direction:row;flex-wrap:wrap;width:80%;gap:3rem}
-.hero-text{flex:1;text-align:left;order:1;max-width:1300px}
-.hero-text h1{font-size:5vw;font-weight:700;color:#00AEEF;line-height:1}
-#spanish-title{font-size:4vw;font-weight:700;color:#00AEEF;line-height:1}
-.hero-text p{font-size:2rem;color:#ccc;margin-top:4rem}
 
-.hero-image{flex-shrink:0;order:2;display:flex;justify-content:center;align-items:center;margin-left:6rem}
-.hero-image img{width:350px;height:350px;object-fit:cover;border-radius:50%;box-shadow:0 0 20px rgba(0,0,0,.3);max-width:100%}
+/* was #hero::before */
+.hero::before{
+    content:"";
+    position:absolute; inset:0; pointer-events:none; z-index:0;
+    background:
+            radial-gradient(900px circle at 12% 50%,
+            color-mix(in srgb, var(--brand) 20%, transparent) 0%,
+            transparent 55%),
+            radial-gradient(500px circle at 78% 56%,
+            color-mix(in srgb, var(--brand) 40%, transparent) 0%,
+            transparent 55%);
+    mix-blend-mode: screen;
+}
+
+/* was #hero > *  */
+.hero > *{ position: relative; z-index: 1; }
+
+.hero-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-direction:row;
+    flex-wrap:wrap;
+    width:80%;
+    gap:3rem;
+    margin-inline:auto;
+}
+
+.hero-text{flex:1;text-align:left;order:1;max-width:1300px}
+.hero-text p{
+    font-size:2rem;
+    color: #fff !important;
+    opacity: 1 !important;
+    filter: none !important;
+    margin-top:4rem;
+    text-shadow: 0 1px 0 rgba(0,0,0,.55), 0 0 18px rgba(0,0,0,.22);
+}
+.hero-text p strong{
+    color:#fff !important;
+    font-weight:800;
+}
+
+.hero-image{
+    flex-shrink:0;
+    order:2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left:0;
+}
+.hero-image img{
+    width:350px;height:350px;object-fit:cover;border-radius:50%;
+    /*box-shadow:0 0 20px rgba(0,0,0,.3);max-width:100%;*/
+}
 
 /* --- HEADLINE + LOGO ---------------------------------------------------- */
-/* Keep logo to the LEFT of the text and prevent wrapping between them on desktop */
+/* Always keep logo to the LEFT of the headline on desktop */
 .headline-with-logo{
-    display:flex; align-items:center; gap:1rem; flex-wrap:nowrap;
-    font-size:5vw; font-weight:bold; color:#00AEEF; line-height:1.05;
+    display:flex; align-items:center; gap:1rem;
+    flex-wrap:nowrap;                 /* lock beside the logo */
+    font-size:5vw; font-weight:900; color: var(--brand); line-height:1.05;
 }
-
-/* size the logo consistently for BOTH languages */
-.headline-with-logo img,
 .headline-with-logo .headline-logo{
     width:clamp(88px,12vw,180px);
     height:auto; flex:0 0 auto;
 }
 
-/* allow manual line-break styling for Spanish */
-.title-lines{display:flex;flex-direction:column}
-.title-line{display:block}
+/* Language-specific headline sizing */
+html[lang="en"] .hero-text h1{
+    font-size: clamp(2.6rem, 5vw, 5rem);
+    letter-spacing: -0.015em;
+}
+html[lang="es"] .hero-text h1{
+    font-size: clamp(2.6rem, 4.8vw, 4.9rem);  /* slightly smaller to avoid wrap */
+    letter-spacing: -0.012em;
+    word-break: normal;
+    hyphens: none;
+}
 
-/* language-specific font sizing */
-html[lang="en"] .headline-with-logo{font-size:clamp(2.6rem,5vw,5rem)}
-html[lang="es"] .headline-with-logo{font-size:clamp(2.4rem,4.6vw,4.9rem)} /* a touch smaller to fit DESARROLLADOR BACKEND */
+/* On smaller screens allow wrapping beneath the logo for readability */
+@media (max-width: 900px){
+    .headline-with-logo{ flex-wrap:wrap; gap:1rem 1.25rem; }
+}
+
+/* Hero title styling (glow + stroke) */
+.hero-text h1{
+    font-family: 'Autobus','Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+    font-size: var(--hero-title-size);
+    color: var(--brand-strong) !important;
+    -webkit-text-stroke: .5px rgba(0,0,0,.45);
+    text-shadow:
+            0 1px 0 rgba(0,0,0,.35),
+            0 0 28px rgba(0,174,239,.20),
+            0 0 4px rgba(0,174,239,.35);
+}
 
 /* --- Subheadline & CTA --------------------------------------------------- */
 .subheadline{padding-right:10rem}
@@ -75,26 +216,26 @@ html[lang="es"] .headline-with-logo{font-size:clamp(2.4rem,4.6vw,4.9rem)} /* a t
 .resume-link{position:relative;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:.4rem;transition:.3s}
 .explore-btn{
     position:relative;display:flex;align-items:center;gap:10px;font-size:1.1rem;
-    padding:.6rem 1rem;background:#fff;border:2px solid #ddd;border-radius:9999px;
-    box-shadow:0 8px 20px rgba(0,0,0,.1);cursor:pointer;overflow:hidden;z-index:0;color:#222;transition:color .3s;margin-top:3rem;
+    padding:.6rem 1rem;background:#02121f;border:2px solid var(--brand);border-radius:9999px;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);cursor:pointer;overflow:hidden;z-index:0;color:var(--brand);transition:color .3s;margin-top:3rem;
 }
-.explore-btn::before{content:'';position:absolute;top:0;left:0;height:100%;width:0;background:#00AEEF;z-index:-1;transition:width .4s}
+.explore-btn::before{content:'';position:absolute;top:0;left:0;height:100%;width:0;background:var(--brand);z-index:-1;transition:width .4s}
 .explore-btn:hover::before{width:100%}
 .explore-btn:hover{color:#fff;border-color:#fff}
 .arrow-icon{margin-left:1rem;width:50px;height:50px;padding:6px;border:1px solid #333;border-radius:50%;transform:rotate(45deg);transition:.3s;background:#fff;z-index:1}
 .explore-btn:hover .arrow-icon{background:#fff;border-color:#82d4f5;transform:rotate(90deg)}
 .arrow-icon path{fill:#333;transition:fill .3s}
-.explore-btn:hover .arrow-icon path{fill:#00AEEF}
+.explore-btn:hover .arrow-icon path{fill:var(--brand)}
 .explore-button:hover ~ .subheadline a{color:#fff}
 
 /* ==========================================================================
    5. SCROLLING BUTTONS
    ========================================================================== */
-.scroll-arrow{width:50px;height:50px;fill:#00AEEF;justify-content:center;cursor:pointer;font-weight:600;overflow:hidden;align-items:center;--rotate:0deg;transition:transform .3s,fill .3s,filter .3s}
+.scroll-arrow{width:50px;height:50px;fill:var(--brand);justify-content:center;cursor:pointer;font-weight:600;overflow:hidden;align-items:center;--rotate:0deg;transition:transform .3s,fill .3s,filter .3s}
 .scroll-arrow.rotate-up{--rotate:180deg;transform:rotate(180deg)}
-.scroll-button button:hover .scroll-arrow{fill:#00AEEF;filter:drop-shadow(0 0 8px #00AEEF);animation:pulse-glow 2s infinite;transform:translateY(5px) rotate(var(--rotate,0))}
-.scroll-arrow.rotate-up button:hover{transform:translateY(5px);fill:#00AEEF;filter:drop-shadow(0 0 8px #00AEEF);animation:pulse-glow 2s infinite}
-@keyframes pulse-glow{0%,100%{filter:drop-shadow(0 0 6px #00AEEF)}50%{filter:drop-shadow(0 0 12px #00AEEF)}}
+.scroll-button button:hover .scroll-arrow{fill:var(--brand);filter:drop-shadow(0 0 8px var(--brand));animation:pulse-glow 2s infinite;transform:translateY(5px) rotate(var(--rotate,0))}
+.scroll-arrow.rotate-up button:hover{transform:translateY(5px);fill:var(--brand);filter:drop-shadow(0 0 8px var(--brand));animation:pulse-glow 2s infinite}
+@keyframes pulse-glow{0%,100%{filter:drop-shadow(0 0 6px var(--brand))}50%{filter:drop-shadow(0 0 12px var(--brand))}}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
 .scroll-button{left:5rem;top:50%;z-index:10;display:flex;background:#111;border:none}
 .scroll-button button{border:none;outline:none;background:none}
@@ -106,35 +247,32 @@ html[lang="es"] .headline-with-logo{font-size:clamp(2.4rem,4.6vw,4.9rem)} /* a t
 .floating-nav{
     position:fixed;top:3rem;left:50%;transform:translateX(-50%);
     background:rgba(17,17,17,.9);backdrop-filter:blur(6px);padding:.75rem 1rem;border-radius:10px;
-    box-shadow:0 0 10px #000;z-index:100;transition:opacity .4s ease;
+    box-shadow:0 0 10px #000;z-index:150;transition:opacity .4s ease;
 }
 .floating-nav .nav-lang{margin-left:auto}
 .flag-inline{
     width:36px;height:36px;border-radius:50%;border:2px solid #fff;display:inline-flex;align-items:center;justify-content:center;
     background:transparent;font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.2);transition:transform .2s,box-shadow .3s,border-color .3s;
 }
-.flag-inline:hover{transform:scale(1.08);box-shadow:0 6px 16px rgba(0,0,0,.3);border-color:#00AEEF}
+.flag-inline:hover{transform:scale(1.08);box-shadow:0 6px 16px rgba(0,0,0,.3);border-color:var(--brand)}
 
 .floating-nav ul{display:flex;list-style:none;gap:1.5rem;justify-content:center;align-items:center}
 .floating-nav li{color:#bbb;font-weight:500;font-size:.95rem}
 .floating-nav li a{display:inline-flex;align-items:center;gap:.5rem;color:#bbb;text-decoration:none;transition:color .3s;line-height:1}
-.floating-nav li a:hover{color:#00AEEF}
+.floating-nav li a:hover{color:var(--brand)}
 .floating-nav .active{background:#222;color:#fff;padding:.5rem 1rem;border-radius:8px}
 .floating-nav li a img{display:block;width:36px;height:36px}
 
 /* ARROW NAV */
-.bottom-nav{position:fixed;bottom:10%;left:90%;transform:translateX(-50%);background:rgba(17,17,17,.9);backdrop-filter:blur(6px);padding:.25rem;border-radius:50%;border:1px solid #00AEEF;z-index:100;transition:opacity .4s}
+.bottom-nav{position:fixed;bottom:10%;left:90%;transform:translateX(-50%);background:rgba(17,17,17,.9);backdrop-filter:blur(6px);padding:.25rem;border-radius:50%;border:1px solid var(--brand);z-index:200;transition:opacity .4s}
 .bottom-nav .scroll-button{background:transparent!important;border:1px!important;padding:0!important}
 .bottom-nav ul{display:flex;list-style:none;gap:1.5rem;justify-content:center;align-items:center}
 .bottom-nav li{color:#bbb;font-weight:500;font-size:.95rem}
 .bottom-nav li a{color:#bbb;text-decoration:none;transition:color .3s}
 
 /* ==========================================================================
-   6.x Mobile defaults (hidden mobile nav by default)
+   6.x Mobile defaults
    ========================================================================== */
-/*.mobile-menu-toggle,.mobile-nav{display:none}*/
-/*.mobile-nav{visibility:hidden;pointer-events:none}*/
-/*.mobile-nav.active{visibility:visible;pointer-events:auto}*/
 .mobile-menu-toggle,
 .mobile-nav{ display:none; }
 
@@ -142,12 +280,26 @@ html[lang="es"] .headline-with-logo{font-size:clamp(2.4rem,4.6vw,4.9rem)} /* a t
    7. MAIN CONTENT
    ========================================================================== */
 main{padding:4rem 2rem}
-section{margin-bottom:1rem;padding-left:1%;max-width:70%;margin-left:auto;margin-right:auto;text-align:left}
-section p,section ul{padding-left:0;padding-right:0}
-#about p{font-size:1.7rem}
-section h2{color:#00AEEF;margin-bottom:1rem;padding-left:0;font-size:5rem}
+section{
+    margin-bottom:1rem;
+    padding-left:1%;
+    max-width:70%;
+    margin-left:auto;margin-right:auto;
+    text-align:left;
+    scroll-margin-top: var(--sticky-offset);
+}
+section p,section ul{
+    padding-left:0;
+    padding-right:0;
+    color:#f7f9fc;
+    text-shadow:0 1px 0 rgba(0,0,0,.45);
+}
+#about{ margin-top: var(--about-top-gap); }     /* ⬅ push About down from hero */
 
-/* headings */
+#about p{font-size:1.7rem}
+section h2{color: var(--brand);} /* fallback */
+
+/* headings (base) */
 h1,h2,h3,h4,h5,h6{font-weight:700}
 
 /* projects */
@@ -155,19 +307,19 @@ h1,h2,h3,h4,h5,h6{font-weight:700}
 section ul{padding-left:15rem;padding-right:10rem}
 
 /* skills */
-#skills{padding:4rem 2rem;background:#000;color:#ddd}
+#skills{padding:4rem 2rem;color:#ddd}
 #about-position,#skills-position{margin-top:2vw;margin-bottom:2vw;color:transparent}
 .skills-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;max-width:1200px;margin:0 auto}
 .skills-column{flex:1;min-width:280px}
 .skills-column h3{font-size:2.5rem;color:#fff;margin-bottom:1rem}
 .skills-column ul{list-style:none;padding-left:0}
 .skills-column li{display:flex;align-items:center;margin-bottom:1rem;font-size:1rem;color:#ddd;font-weight:700}
-.skills-column li i{color:#00AEEF;margin-right:.8rem;font-size:1.5rem;width:1.6rem;text-align:center}
+.skills-column li i{color:var(--brand);margin-right:.8rem;font-size:1.5rem;width:1.6rem;text-align:center}
 
 /* projects section */
 #projects-position{margin-top:9vw;margin-bottom:2vw;color:transparent}
-.projects-section{padding:60px 40px;background:#000;color:#fff;text-align:left}
-.projects-section h2{font-size:5rem;margin-bottom:2rem;color:#00AEEF;text-align:left;width:100%}
+.projects-section{padding:60px 40px;color:#fff;text-align:left}
+.projects-section h2{font-size:5rem;text-align:left;width:100%}
 .projects-grid{display:flex;justify-content:center;gap:5rem;flex-wrap:wrap;max-width:100%;margin:0 auto;padding:2rem}
 #demoButton{font-weight:800}
 #live-demo{max-height:0;opacity:0;overflow:hidden;transition:max-height .6s ease,opacity .4s ease;padding:1.2rem;border-radius:.5rem}
@@ -192,9 +344,9 @@ section ul{padding-left:15rem;padding-right:10rem}
    ========================================================================== */
 :root{--logo-size:250px}
 footer{text-align:center;padding:2rem;background:#000;color:#A0A0A0;font-size:1.3rem;border-top:1px solid #222}
-#contact{color:#00AEEF;margin-bottom:1rem}
+#contact{color:var(--brand);margin-bottom:1rem}
 footer a{color:#A0A0A0;text-decoration:underline;margin:0 .5rem;transition:color .3s}
-footer a:hover{color:#00AEEF}
+footer a:hover{color:var(--brand)}
 .social-icons i{font-size:3rem;padding:.5rem}
 .scroll-top-link{font-size:2.5rem}
 footer>.footer-inner{
@@ -206,7 +358,49 @@ footer .footer-brand img{display:block;width:var(--logo-size);height:var(--logo-
 footer .footer-center{grid-column:2;justify-self:center;text-align:center;margin:0;max-width:1100px}
 footer .footer-spacer{grid-column:3;justify-self:end;width:var(--logo-size);height:1px}
 footer .social-icons a{text-decoration:none}
-footer .social-icons a:hover,footer .social-icons a:focus{ text-decoration:none; color:#00AEEF }
+footer .social-icons a:hover,footer .social-icons a:focus{ text-decoration:none; color:var(--brand) }
 
 /* Prevent horizontal scroll on all screens */
 body,html{overflow-x:hidden}
+
+/* ==========================================================================
+   11. DISPLAY HEADING POP (sections)
+   ========================================================================== */
+:is(section, .projects-section) > h2,
+#about h2, #skills h2 {
+    font-family: 'Autobus','Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+    font-size: var(--title-size) !important;
+    color: var(--brand-strong) !important;
+    font-weight:900;
+    -webkit-text-stroke: .45px rgba(0,0,0,.45);
+    text-shadow:
+            0 1px 0 rgba(0,0,0,.35),
+            0 0 24px rgba(0,174,239,.18),
+            0 0 3px rgba(0,174,239,.28);
+    opacity:1 !important;
+    filter:none !important;
+}
+/* subtle dark backplate behind each section title for consistent contrast */
+:is(section, .projects-section){ position: relative; }
+:is(section, .projects-section)::before{
+    content:"";
+    position:absolute; left:0; right:0; top:0; height:18rem; pointer-events:none;
+    background: radial-gradient(820px 260px at 20% 22%,
+    rgba(0,0,0,.28), rgba(0,0,0,0) 70%);
+    z-index: 0;
+}
+:is(section, .projects-section) > h2{ position: relative; z-index: 1; }
+.projects-section h2{ color: var(--brand-strong) !important; }
+
+/* ==========================================================================
+   12. SCROLL ANCHORS FOR CYCLING (JS-friendly)
+   ========================================================================== */
+#projects-position,
+#about-position,
+#skills-position{
+    display:block;
+    height:1px;
+    top:0 !important;
+    scroll-margin-top: var(--sticky-offset);
+    pointer-events:none;
+}

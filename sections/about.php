@@ -1,5 +1,5 @@
 <section id="about">
-    <div id="about-position">position</div>
+    <div id="about-position"></div>
     <h2>About Me</h2>
     <p>
         I’m Jonathan Hendrix, a <strong>Backend Developer</strong> based in Seville, Spain. After several years of experience in administrative and operations roles, I transitioned into software development to combine my problem-solving mindset with a passion for technology.

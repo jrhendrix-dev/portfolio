@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/responsive.css" />
     <script src="/js/index.js"></script>
 </head>
-<body>
+<body class="body">
 
 <!-- Enlace para accesibilidad -->
 <a href="#about" class="sr-only sr-only-focusable">Saltar al contenido principal</a>
@@ -59,9 +59,9 @@
             <a href="#"><img src="/logo/noBgColor.svg" alt="Logotipo JH" width="48" height="48" /></a>
         </li>
         <li><a href="#">Inicio</a></li>
-        <li><a href="#about">Sobre mí</a></li>
         <li><a href="#projects-position">Mis proyectos</a></li>
         <li><a href="#skills-position">Tecnologías</a></li>
+        <li><a href="#about">Sobre mí</a></li>
         <li><a href="#contact">Contáctame</a></li>
 
         <!-- Bandera al extremo derecho para cambiar a inglés -->
@@ -100,9 +100,9 @@
         <span class="sr-only">Inicio</span>
     </a>
     <a href="#">Inicio</a>
-    <a href="#about">Sobre mí</a>
     <a href="#projects-position">Mis proyectos</a>
     <a href="#skills-position">Tecnologías</a>
+    <a href="#about">Sobre mí</a>
     <a href="#contact">Contáctame</a>
     <a href="index.php" aria-label="Cambiar a inglés">
         <button class="flag-inline" type="button" title="English">

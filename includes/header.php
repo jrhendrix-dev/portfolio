@@ -18,7 +18,7 @@
 
 
 </head>
-<body>
+<body class="body">
 
 <!-- Skip link for accessibility -->
 <a href="#about" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -62,9 +62,9 @@
         <li>
             <a href="#">Top</a>
         </li>
-        <li><a href="#about">About Me</a></li>
         <li><a href="#projects-position">My Work</a></li>
         <li><a href="#skills-position">Skills</a></li>
+        <li><a href="#about">About Me</a></li>
         <li><a href="#contact">Contact Me</a></li>
         <li class="nav-lang">
             <a href="index-es.php" aria-label="Cambiar a español">
@@ -97,9 +97,9 @@
         <span class="sr-only">Home</span>
     </a>
     <a href="#">TOP</a>
-    <a href="#about">About Me</a>
     <a href="#projects-position">My Work</a>
     <a href="#skills-position">Skills</a>
+    <a href="#about">About Me</a>
     <a href="#contact">Contact Me</a>
     <a href="index-es.php" aria-label="Cambiar a español">
         <button class="flag-inline" type="button">🇪🇸</button>
