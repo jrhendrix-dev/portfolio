@@ -10,11 +10,13 @@
     <script src="https://kit.fontawesome.com/b9be0d536e.js" crossorigin="anonymous"></script>
     <!-- stylesheet for equalizing all default element rendering -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Devicon icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
 
     <!-- Custom CSS & JS -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/responsive.css">
-    <script src="/js/index.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/index.js" defer></script>
 
 
 </head>
@@ -31,19 +33,36 @@
                 <img src="/logo/noBgColor.svg" alt="JH logo" class="headline-logo">
                 BACKEND DEVELOPER
             </h1>
+
+            <!-- NEW: chips row -->
+            <div class="chip-row" role="navigation" aria-label="Primary profile links">
+                <a class="chip" href="https://www.linkedin.com/in/jrhendrix-dev" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+                </a>
+                <a class="chip" href="https://github.com/jrhendrix-dev" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a class="chip" href="mailto:jrhendrixdev@gmail.com">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i> jrhendrixdev@gmail.com
+                </a>
+
+                <!-- Availability badge: english page -->
+                <span class="availability-badge" data-available="true">
+                <span class="dot" aria-hidden="true"></span>
+                Available for work
+              </span>
+            </div>
+
             <p class="subheadline">
                 My name is Jonathan Hendrix, I'm a <strong>Backend Developer</strong> based in Seville, Spain, focused on building scalable and maintainable web applications.
                 <br><br>
-                <button class="explore-btn">
-                    <a href="https://jonathan-hendrix.dev/docs/CV-Jonathan-English.pdf" class="resume-link">
-                    My CV
-                    <svg class="arrow-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                                d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                        ></path>
-                    </svg>
-                    </a>
-                </button>
+                <a href="/docs/CV-Jonathan.pdf"
+                   class="chip chip-cta"
+                   download
+                   aria-label="Download my CV (PDF)">
+                    <i class="fa-solid fa-download" aria-hidden="true"></i>
+                    Download my CV
+                </a>
             </p>
         </div>
         <div class="hero-image">
@@ -78,7 +97,7 @@
     <ul>
         <li>
             <div class="arrow-down scroll-button">
-                <button type="button" aria-label="Scroll" id="scroll-button">
+                <button type="button" aria-label="Scroll" id="scroll-button" onclick="__cycleNext()">
                 <svg class="scroll-arrow scroll-button" id="scroll-button-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M4 9h5V3h6v6h5l-8 12z"/>
                 </svg>

@@ -1,0 +1,33 @@
+/* 1) FONT IMPORTS */
+@font-face{
+    font-family: 'Autobus';
+    src: url('/assets/omnibus-font/AutobusOmnibus-K7127.ttf') format('truetype');
+}
+
+/* 2) BASE STYLES & RESETS */
+:root{
+    --brand:#00AEEF;
+    --brand-strong: color-mix(in srgb, var(--brand) 82%, white 18%);
+    --bg-0:#04070B;  /* darker */
+    --bg-1:#091017;
+
+    --title-size: clamp(3rem, 6.6vw, 5.5rem);
+    --hero-title-size: clamp(3.6rem, 9vw, 7rem);
+    --sticky-offset: 8rem;
+    --about-top-gap: clamp(3rem, 8vw, 10rem);
+    --hero-top-gap: clamp(4rem, 9vw, 12rem);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box }
+html,body{ -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale }
+html{ scroll-behavior:smooth }
+
+body{
+    font-family:'Segoe UI',Roboto,sans-serif;
+    background: var(--bg-0);   /* use token, not #000 */
+    color:#ffffff; font-size:22px;
+    min-height:100vh; overflow-x:hidden; line-height:1.5;
+}
+
+ul,ol{ list-style:none; padding-left:0; }
+li::marker{ content:none; }

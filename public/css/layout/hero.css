@@ -1,0 +1,109 @@
+/* 4) HERO SECTION */
+.language-switcher{ position:fixed; top:1rem; right:1rem; z-index:100 }
+
+.flag-button-en{
+    width:60px; height:60px; border-radius:50%; border:2px solid #fff; background:transparent;
+    box-shadow:0 4px 12px rgba(0,0,0,.2); cursor:pointer; overflow:hidden; padding:0;
+}
+.flag-button-en:hover{ transform:scale(1.1); box-shadow:0 6px 16px rgba(0,0,0,.3) }
+.flag-icon{ width:100%; height:100%; object-fit:cover; border-radius:50% }
+
+.hero{
+    display:flex;
+    justify-content:center;
+    /* top uses safe-area + token; bottom is large enough to clear the next section */
+    padding: calc(var(--hero-top-gap) + env(safe-area-inset-top, 0px)) 2rem
+    clamp(56px, 12vh, 128px);
+    color:#ddd;
+    position:relative;
+    margin: 0;                 /* keep layout predictable */
+}
+/*.hero::before{*/
+/*    content:""; position:absolute; inset:0; pointer-events:none; z-index:0;*/
+/*    background:*/
+/*            radial-gradient(900px circle at 12% 50%, color-mix(in srgb, var(--brand) 20%, transparent) 0%, transparent 55%),*/
+/*            radial-gradient(500px circle at 78% 56%, color-mix(in srgb, var(--brand) 40%, transparent) 0%, transparent 55%);*/
+/*    mix-blend-mode: screen;*/
+/*}*/
+.hero > *{ position:relative; z-index:1 }
+
+.hero-content{
+    display:flex; justify-content:space-between; align-items:center; flex-direction:row; flex-wrap:wrap;
+    width:80%; gap:3rem; margin-inline:auto;
+}
+.hero-text{ flex:1; text-align:left; order:1; max-width:1300px }
+.hero-text p{
+    font-size: clamp(1.05rem, 2.2vw, 2.1rem);
+    color:#fff !important; margin-top:4rem;
+    text-shadow:0 1px 0 rgba(0,0,0,.55), 0 0 18px rgba(0,0,0,.22);
+}
+.hero-text p strong{ color:#fff !important; font-weight:800 }
+
+.hero-image{ flex-shrink:0; order:2; display:flex; justify-content:center; align-items:center; margin-left:0 }
+.hero-image img{ width:350px; height:350px; object-fit:cover; border-radius:50% }
+
+/* HEADLINE + LOGO */
+.headline-with-logo{
+    display:flex; align-items:center; gap:1rem; flex-wrap:nowrap;
+    font-size:5vw; font-weight:900; color:var(--brand); line-height:1.05;
+}
+.headline-with-logo .headline-logo{ width:clamp(88px,12vw,180px); height:auto; flex:0 0 auto; }
+
+html[lang="en"] .hero-text h1{ font-size: clamp(2.6rem, 5vw, 5rem); letter-spacing:-0.015em; }
+html[lang="es"] .hero-text h1{ font-size: clamp(2.6rem, 4.8vw, 4.9rem); letter-spacing:-0.012em; }
+
+@media (max-width:900px){ .headline-with-logo{ flex-wrap:wrap; gap:1rem 1.25rem } }
+
+.hero-text h1{
+    font-family:'Autobus','Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+    font-size: var(--hero-title-size);
+    color: var(--brand-strong) !important;
+    -webkit-text-stroke:.5px rgba(0,0,0,.45);
+    text-shadow:0 1px 0 rgba(0,0,0,.35), 0 0 28px rgba(0,174,239,.20), 0 0 4px rgba(0,174,239,.35);
+}
+
+.subheadline{ padding-right:0 }
+.subheadline a{ color:inherit; font-weight:800; font-size:1.3rem }
+.subheadline a:hover{ color:#fff }
+
+.hero .subheadline {
+    font-size: clamp(0.95rem, 1.2vw + 0.4rem, 1.25rem); /* ~15–20px */
+    line-height: 1.6;
+    max-width: 62ch;
+    margin-top: 1rem;
+    opacity: .95;
+}
+
+/* Make bold bits a little less “shouty” at large sizes */
+.hero .subheadline strong {
+    font-weight: 700;
+}
+
+/* Tweak on small screens */
+@media (max-width: 640px) {
+    .hero .subheadline {
+        font-size: 0.95rem;     /* ~15px */
+        line-height: 1.55;
+    }
+}
+
+/* Optional: keep the CV button from inflating the line height */
+.hero .subheadline .explore-btn {
+    margin-top: 1rem;
+}
+
+
+@media (max-width: 780px){
+    .hero-image { margin-top: clamp(8px, 3vh, 28px); }
+    .hero-content{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        width: min(90%, 46rem);
+    }
+}
+
+/* Some mobile browsers render parallax (background-attachment: fixed) oddly. Force scroll. */
+@media (max-width: 900px){
+    .hero { background-attachment: scroll !important; }
+}

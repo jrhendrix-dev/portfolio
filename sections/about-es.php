@@ -1,5 +1,5 @@
 <section id="about">
-    <div id="about-position">posición</div>
+    <div id="about-position"></div>
     <h2>Sobre mí</h2>
     <p>
         Soy Jonathan Hendrix, un <strong>Desarrollador Backend</strong> ubicado en Sevilla, España. Tras varios años de experiencia en roles administrativos y operativos, hice la transición al desarrollo de software para combinar mi mentalidad resolutiva con mi pasión por la tecnología.

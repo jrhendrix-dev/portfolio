@@ -1,0 +1,184 @@
+/* sections.css — clean sections, solid cards */
+
+/* ========== 1) Global section layout & typography ========== */
+main{
+    padding:4rem 2rem;
+}
+section{
+    max-width:1200px;
+    margin:0 auto 4rem auto;
+    text-align:left;
+    scroll-margin-top:var(--sticky-offset);
+}
+section p,
+section ul{
+    color:#f7f9fc;
+    text-shadow:0 1px 0 rgba(0,0,0,.45);
+    margin:0 0 1.1rem 0;
+    padding:0;
+}
+
+/* About */
+#about{ margin-top:var(--about-top-gap); }
+#about p{ font-size:1.35rem; }
+
+/* Headings */
+h1,h2,h3,h4,h5,h6{ font-weight:700; }
+section h2{ color:var(--brand); }
+
+/* Big section/title style (kept) */
+:is(section, .projects-section) > h2,
+#about h2, #skills h2{
+    font-family:'Autobus','Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+    font-size:var(--title-size) !important;
+    color:var(--brand-strong) !important;
+    font-weight:900;
+    -webkit-text-stroke:.45px rgba(0,0,0,.45);
+    text-shadow:
+            0 1px 0 rgba(0,0,0,.35),
+            0 0 24px rgba(0,174,239,.18),
+            0 0 3px rgba(0,174,239,.28);
+    position:relative;
+    z-index:1;
+}
+
+/* Invisible anchor helpers */
+#projects-position,
+#skills-position,
+#about-position{
+    display:block;
+    height:1px;
+    scroll-margin-top:var(--sticky-offset);
+}
+
+/* ========== 2) Projects ========== */
+.projects-section{
+    padding:60px 0;
+    color:#fff;
+    text-align:left;
+}
+.projects-section h2{
+    font-size:var(--title-size);
+    width:100%;
+    margin-top:0; /* defensive: headings shouldn’t pull upward */
+}
+.projects-grid{
+    display:flex;
+    justify-content:center;
+    gap:5rem;
+    flex-wrap:wrap;
+    max-width:100%;
+    margin:0 auto;
+    padding:2rem 0;
+}
+.project-card{
+    background:rgba(0,0,0,.25);
+    border-radius:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    border:1px solid rgba(255,255,255,.05);
+    overflow:hidden;
+}
+.project-card img{
+    display:block; /* prevents hairline gaps */
+    width:100%;
+    height:auto;
+}
+#projects-position{
+    margin-top:clamp(28px, 8vh, 96px); /* spacer after hero */
+}
+@media (max-width:780px){
+    .projects-section{ padding-top:clamp(28px, 6vh, 64px); }
+}
+
+/* ========== 3) Skills — single horizontal glass card ========== */
+#skills.skills--onecard{ padding:3rem 0; }
+
+/* Card wrapping the three columns */
+#skills.skills--onecard .skills-grid{
+    background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.045));
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:22px;
+    box-shadow:0 14px 42px rgba(0,0,0,.40);
+    backdrop-filter:blur(6px);
+    padding:1.25rem 1.25rem .75rem;
+
+    display:grid;
+    grid-template-columns:repeat(3, minmax(260px, 1fr));
+    gap:2rem 3rem;
+}
+@media (max-width:1060px){
+    #skills.skills--onecard .skills-grid{ grid-template-columns:1fr; }
+}
+
+/* Columns (no inner cards) */
+#skills.skills--onecard .skills-column{
+    background:transparent;
+    border:0;
+    box-shadow:none;
+    padding:.5rem 1rem;
+}
+
+/* Column headings */
+#skills.skills--onecard .skills-column h3{
+    color:#fff;
+    margin:.25rem 0 1rem;
+    font-weight:800;
+    font-size:clamp(1.25rem, 1.2vw + 1rem, 1.7rem);
+}
+
+/* Items — smaller + bright white */
+#skills.skills--onecard .skills-column li{
+    display:flex; align-items:center;
+    color:#fff;                 /* lock to bright white */
+    font-weight:700;
+    letter-spacing:.15px;
+    line-height:1.25;
+    margin:0 0 .55rem;
+    padding:.35rem .25rem;
+    font-size:clamp(.95rem, .35vw + .85rem, 1.05rem);
+}
+#skills.skills--onecard .skills-column li + li{
+    border-top:1px solid rgba(255,255,255,.06);
+    padding-top:.6rem;
+    margin-top:.35rem;
+}
+
+/* Icon rules */
+/* Leave Devicon `.colored` alone (brand colors) */
+#skills .skills-column li i[class*="devicon-"].colored{ /* intentionally empty */ }
+/* Devicon without `colored` — inherit text color (white) */
+#skills .skills-column li i[class*="devicon-"]:not(.colored){ color:inherit; }
+/* Non-Devicon (FA) — use brand */
+#skills .skills-column li i:not([class*="devicon-"]){ color:var(--brand); }
+/* Size & subtle lift */
+#skills .skills-column li i{
+    margin-right:.8rem;
+    font-size:1.45rem;
+    width:1.7rem;
+    filter:drop-shadow(0 1px 0 rgba(0,0,0,.35));
+}
+
+/* ========== 4) Cleanups (no accidental frames) ========== */
+/* Remove old decorative overlay on generic sections */
+:is(section, .projects-section)::before{
+    display:none !important;
+    content:none !important;
+}
+/* Make common wrappers transparent — but DO NOT include #skills/.skills-grid */
+#projects, #about,
+.projects-section, .skills-section,
+.projects-grid,
+.about-wrapper, [id$="-position"]{
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+    outline:none !important;
+}
+/* Ensure generic sections don’t get stray backgrounds */
+section, .projects-section{
+    background:transparent !important;
+    border:none !important;
+    box-shadow:none !important;
+}
+/* Images shouldn’t create hairline artifacts */
+section img{ display:block; }

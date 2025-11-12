@@ -1,0 +1,45 @@
+/* --------------------------------------------------------------------------
+   Buttons (legacy explore optional) + Scroll arrows
+   -------------------------------------------------------------------------- */
+
+/* If you still use the old explore button somewhere, keep this. Otherwise you
+   can delete this whole block safely. */
+.explore-btn{
+    position:relative; display:flex; align-items:center; gap:10px; font-size:1.05rem;
+    padding:.6rem 1rem; background:#02121f; border:2px solid var(--brand);
+    border-radius:9999px; color:var(--brand);
+    box-shadow:0 8px 20px rgba(0,0,0,.1); cursor:pointer; overflow:hidden; z-index:0;
+    transition:color .3s, transform .2s;
+}
+.explore-btn::before{
+    content:''; position:absolute; inset:0; width:0; height:100%;
+    background:var(--brand); z-index:-1; transition:width .35s ease;
+}
+.explore-btn:hover{ color:#fff; transform: translateY(-1px); }
+.explore-btn:hover::before{ width:100%; }
+
+/* IMPORTANT: arrow styles are now scoped ONLY to explore button */
+.explore-btn .arrow-icon{
+    margin-left:.75rem; width:42px; height:42px; padding:6px;
+    border:1px solid #333; border-radius:50%;
+    transform:rotate(45deg); transition:.3s; background:#fff; z-index:1;
+}
+.explore-btn:hover .arrow-icon{ background:#fff; border-color:#82d4f5; transform:rotate(90deg) }
+.explore-btn .arrow-icon path{ fill:#333; transition:fill .3s }
+.explore-btn:hover .arrow-icon path{ fill:var(--brand) }
+
+/* --- Scroll arrow (kept) ------------------------------------------------- */
+.scroll-arrow{
+    width:50px; height:50px; fill:var(--brand);
+    display:inline-flex; justify-content:center; align-items:center;
+    cursor:pointer; font-weight:600; overflow:hidden;
+    --rotate:0deg; transition:transform .3s,fill .3s,filter .3s;
+}
+.scroll-arrow.rotate-up{ --rotate:180deg; transform:rotate(180deg) }
+.scroll-button button:hover .scroll-arrow{
+    fill:var(--brand);
+    filter:drop-shadow(0 0 8px var(--brand));
+    animation:pulse-glow 2s infinite;
+    transform:translateY(5px) rotate(var(--rotate,0));
+}
+@keyframes pulse-glow{ 0%,100%{ filter:drop-shadow(0 0 6px var(--brand)) } 50%{ filter:drop-shadow(0 0 12px var(--brand)) } }

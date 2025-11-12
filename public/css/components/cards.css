@@ -1,0 +1,17 @@
+/* Projects + demo cards */
+#demoButton{ font-weight:800 }
+#live-demo{ max-height:0; opacity:0; overflow:hidden; transition:max-height .6s ease, opacity .4s ease; padding:1.2rem; border-radius:.5rem }
+#live-demo.open{ margin-top:1rem; max-height:1500px; opacity:1; overflow:hidden }
+#live-demo.open:hover{ box-shadow:0 0 5px rgba(0,123,255,.4) }
+
+.demo-card{ display:flex; flex-direction:column; align-items:center; background:rgba(17,17,17,.71); border-radius:1rem; padding:3rem; width:100%; max-width:100%; box-sizing:border-box; transition:transform .3s, box-shadow .3s; box-shadow:0 0 0 transparent }
+.demo-card.open{ max-height:700px; opacity:1 }
+
+.project-card{ display:flex; flex-direction:column; align-items:center; background:#111; border-radius:1rem; padding:3rem; width:100%; max-width:100%; box-sizing:border-box; transition:transform .3s, box-shadow .3s; box-shadow:0 0 0 transparent }
+.project-card:hover{ transform:scale(1.03); box-shadow:0 0 20px rgba(0,123,255,.4) }
+.project-card:hover h3{ color:#4dabf7; text-shadow:0 0 8px rgba(77,171,247,.8) }
+.project-card img{ width:100%; height:auto; border-radius:.5rem }
+.project-card h3{ color:#fff; margin:0 0 10px; padding-top:1rem; padding-left:2rem; padding-right:2rem; max-width:800px; margin:auto }
+.project-card p{ color:#ddd; padding-top:1rem; padding-left:2rem; padding-right:2rem; max-width:800px; margin:auto }
+.project-links a{ color:#3da9fc; font-weight:700; text-decoration:none; margin-right:15px }
+.project-links a:hover{ text-decoration:underline }
