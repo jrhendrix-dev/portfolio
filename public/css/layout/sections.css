@@ -4,6 +4,14 @@
 main{
     padding:4rem 2rem;
 }
+
+main > section{
+    position:relative;
+    z-index:2;
+    isolation:isolate;
+}
+
+
 section{
     max-width:1200px;
     margin:0 auto 4rem auto;
@@ -12,15 +20,51 @@ section{
 }
 section p,
 section ul{
-    color:#f7f9fc;
-    text-shadow:0 1px 0 rgba(0,0,0,.45);
+    color:#ffffff;                                 /* bright white */
+    text-shadow:0 1px 0 rgba(0,0,0,.6);          /* dark shadow = more contrast */
     margin:0 0 1.1rem 0;
     padding:0;
 }
 
+
+/* Hero title: logo + Backend Developer side-by-side */
+section .headline-with-logo,
+.projects-section .headline-with-logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1.1rem;
+    font-size:clamp(1.9rem, 4vw, 2.6rem);
+    margin:0 0 1.4rem;
+}
+
+section .headline-with-logo .headline-logo,
+.projects-section .headline-with-logo .headline-logo{
+    width:clamp(80px, 11vw, 130px);
+    height:auto;
+}
+
+section .headline-with-logo .title-lines,
+.projects-section .headline-with-logo .title-lines{
+    display:flex;
+    flex-direction:column;
+    text-align:left;
+    line-height:0.95;
+}
+
+
+
 /* About */
 #about{ margin-top:var(--about-top-gap); }
-#about p{ font-size:1.35rem; }
+#about p{
+    font-size:1.35rem;
+    font-weight:500;
+}
+
+#about p strong{
+    color:#ffffff;
+    font-weight:700;
+}
 
 /* Headings */
 h1,h2,h3,h4,h5,h6{ font-weight:700; }
@@ -77,6 +121,8 @@ section h2{ color:var(--brand); }
     box-shadow:0 10px 30px rgba(0,0,0,.35);
     border:1px solid rgba(255,255,255,.05);
     overflow:hidden;
+    position:relative;
+    z-index:5;
 }
 .project-card img{
     display:block; /* prevents hairline gaps */
@@ -84,8 +130,9 @@ section h2{ color:var(--brand); }
     height:auto;
 }
 #projects-position{
-    margin-top:clamp(28px, 8vh, 96px); /* spacer after hero */
+    margin-top:clamp(12px, 4vh, 40px); /* gentler spacer after hero */
 }
+
 @media (max-width:780px){
     .projects-section{ padding-top:clamp(28px, 6vh, 64px); }
 }
@@ -164,6 +211,25 @@ section h2{ color:var(--brand); }
     display:none !important;
     content:none !important;
 }
+
+
+/* Soft vertical fade: handled by hero instead (see hero.css) */
+.projects-section{
+    padding:60px 0;
+    color:#fff;
+    text-align:left;
+    position:relative;
+    z-index:5;        /* higher than hero overlays */
+    isolation:isolate;/* its own stacking context */
+}
+
+/* make sure no leftover pseudo-element is drawn */
+.projects-section::before{
+    content:none !important;
+    display:none !important;
+}
+
+
 /* Make common wrappers transparent — but DO NOT include #skills/.skills-grid */
 #projects, #about,
 .projects-section, .skills-section,

@@ -18,12 +18,28 @@
     color:#e6eef6;
     border:1px solid rgba(255,255,255,.12);
     text-decoration:none; white-space:nowrap; line-height:1;
+
+    /* 🔥 KEY FIX: lock chip size so it never inherits body 22px */
+    font-size:.9rem;
+
     transition: transform .2s, filter .2s, background .2s, color .2s, border-color .2s;
 }
+
+
+/* ✅ Defensive: hero social chips MUST be compact */
+.hero .hero-social-row > .chip{
+    font-size:.9rem !important;
+    padding:.5rem .95rem !important;
+    line-height:1 !important;
+}
+
 .chip:hover{ transform:translateY(-1px); filter:brightness(1.05); border-color:rgba(255,255,255,.18); }
 .chip .label{ display:inline-block; line-height:1; }
-.chip i{ font-size:.95em; transform:translateY(1px); } /* optical center */
-
+/* slightly larger, clearer icons */
+.chip i{
+    font-size:1.2em;
+    transform:translateY(1px); /* keep optical centering */
+}
 
 
 /* ==========================================================================
@@ -33,7 +49,7 @@
     display:inline-flex;
     align-items:center;
     gap:.55rem;
-    padding:.58rem .95rem;
+    padding:.25rem .50rem;
     border-radius:9999px;
     /* rich green, translucent to match hero background */
     background: linear-gradient(135deg, rgba(6,44,32,.78), rgba(6,44,32,.62));
@@ -48,10 +64,30 @@
 
 /* glowing green dot */
 .availability-badge .dot{
-    width:.6rem; height:.6rem;
+    display: inline-block;
+    width:.68rem;
+    height:.68rem;
+    min-width: .68rem;
+    flex-shrink: 0;
     border-radius:50%;
     background:#2ecc71;
-    box-shadow:0 0 10px #2ecc71;
+    box-shadow:0 0 10px rgba(46,204,113,1);
+    animation:availability-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes availability-pulse{
+    0%{
+        transform:scale(1);
+        box-shadow:0 0 6px rgba(46,204,113,.7);
+    }
+    50%{
+        transform:scale(1.18);
+        box-shadow:0 0 16px rgba(46,204,113,1);
+    }
+    100%{
+        transform:scale(1);
+        box-shadow:0 0 6px rgba(46,204,113,.7);
+    }
 }
 
 /* subtle hover (optional) */
@@ -93,7 +129,20 @@
 .project-card .project-links{ margin-top:.75rem; }
 
 /* Keep pills clickable + avoid legacy link overrides */
-.project-links .chip{ cursor:pointer; color:inherit; text-decoration:none; margin-right:0; }
+.tech-list .chip{
+    padding: .35rem .75rem;
+    font-size: .82rem;
+    opacity: .95;
+}
+
+/* Keep CTAs chunkier and more “button-like” */
+.project-links .chip{
+    padding: .6rem 1.15rem;
+    font-size: .9rem;
+}
+.project-links .chip-cta{
+    box-shadow: 0 10px 26px rgba(0,0,0,.25);
+}
 
 /* -----------------------------------------------------------
    CRITICAL: Make the Live Demo BUTTON a pill no matter what
@@ -128,3 +177,44 @@
 }
 #live-demo.open{ margin-top:1rem; max-height:1500px; opacity:1; }
 #live-demo.open:hover{ box-shadow:0 0 5px rgba(0,123,255,.4) }
+
+
+/* ============================================================
+   HERO social chips — HARD LOCK size (fix ES/EN mismatch)
+   Put this at the very end of chips.css
+   ============================================================ */
+
+.hero .hero-social-row{
+    font-size: 0.9rem !important;  /* sets the inheritance baseline */
+    line-height: 1 !important;
+}
+
+.hero .hero-social-row .chip{
+    font-size: inherit !important; /* always 0.9rem now */
+    padding: .5rem .95rem !important;
+    line-height: 1 !important;
+}
+.hero .hero-social-row .chip i{
+    font-size: 1.2em !important;   /* keep icons consistent too */
+    transform: translateY(1px);
+}
+
+
+/* ======================================================================
+   HERO social chips — HARD LOCK size across languages
+   Put this at the END of chips.css so it wins the cascade.
+   ====================================================================== */
+
+.hero.hero-social-fix .hero-social-row > a.chip,
+.hero .hero-social-row > a.chip{
+    font-size: 0.9rem !important;      /* 0.9 * 16 = 14.4px */
+    padding: 0.5rem 0.95rem !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+}
+
+/* icon optical centering inside hero pills */
+.hero .hero-social-row > a.chip i{
+    font-size: 1.1em !important;
+    transform: translateY(1px);
+}

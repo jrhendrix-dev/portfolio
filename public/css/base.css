@@ -1,8 +1,4 @@
 /* 1) FONT IMPORTS */
-@font-face{
-    font-family: 'Autobus';
-    src: url('/assets/omnibus-font/AutobusOmnibus-K7127.ttf') format('truetype');
-}
 
 /* 2) BASE STYLES & RESETS */
 :root{
@@ -25,7 +21,7 @@ html{ scroll-behavior:smooth }
 body{
     font-family:'Segoe UI',Roboto,sans-serif;
     background: var(--bg-0);   /* use token, not #000 */
-    color:#ffffff; font-size:22px;
+    color:#ffffff; font-size:14.4px;
     min-height:100vh; overflow-x:hidden; line-height:1.5;
 }
 
