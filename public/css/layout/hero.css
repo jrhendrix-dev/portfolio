@@ -1,0 +1,312 @@
+/* 4) HERO SECTION
+   Refreshed layout: tighter top spacing, stronger title, single-row social pills,
+   and a soft radial glow behind the profile photo.
+*/
+
+
+/* Slightly reduce hero title size in Spanish to avoid overlap */
+html[lang="es"] .headline-with-logo{
+    font-size: clamp(1.7rem, 3.6vw, 2.35rem); /* a bit smaller than EN */
+    letter-spacing: .02em;                   /* tighter */
+}
+
+/* optional: reduce just the second line a hair */
+html[lang="es"] .title-lines span{
+    line-height: 0.95;
+}
+
+
+/* Language switcher (unchanged, for future use) */
+.language-switcher{
+    position:fixed;
+    top:1rem;
+    right:1rem;
+    z-index:100;
+}
+
+.flag-button-en{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:2px solid #fff;
+    background:transparent;
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
+    cursor:pointer;
+    overflow:hidden;
+    padding:0;
+}
+.flag-button-en:hover{
+    transform:scale(1.1);
+    box-shadow:0 6px 16px rgba(0,0,0,.3);
+}
+.flag-icon{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+/* ---------- HERO LAYOUT -------------------------------------------------- */
+
+.hero{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /* extra top padding so the floating nav never covers the wordmark */
+    padding:clamp(6.5rem, 14vh, 8.5rem) 2rem clamp(40px, 8vh, 80px);
+    color:#f5fbff;
+    margin:0;
+}
+
+/* very soft vignette to focus the hero area without fighting the global bg */
+.hero::before{
+    content:"";
+    position:absolute;
+    /* extend overlay well above and below the hero so there's no sharp edge */
+    top:-260px;
+    bottom:-260px;
+    left:0;
+    right:0;
+    pointer-events:none;
+    z-index:0;
+    background:
+            radial-gradient(1000px circle at 18% 32%,
+            rgba(0,174,239,.22) 0%,
+            transparent 60%),
+            radial-gradient(1000px circle at 78% 42%,
+            rgba(0,174,239,.20) 0%,
+            transparent 63%);
+    mix-blend-mode:screen;
+    opacity:.9;
+}
+.hero > *{
+    position:relative;
+    z-index:1;
+}
+
+
+
+
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:3rem;
+    width:min(1120px, 100%);
+    margin-inline:auto;
+}
+
+/* text column */
+.hero-text{
+    flex:1.15;
+    text-align:left;
+    max-width:680px;
+}
+
+/* main title: BACKEND / DEVELOPER */
+.headline-with-logo{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    margin:0 0 1.5rem;
+    font-size:clamp(2.1rem, 4vw, 2.7rem);
+}
+
+.headline-with-logo .headline-logo{
+    width:clamp(88px, 12vw, 160px);
+    height:auto;
+    flex:0 0 auto;
+}
+
+.headline-with-logo .title-lines{
+    display:flex;
+    flex-direction:column;
+    line-height:.95;
+    text-align:left;
+}
+
+/* Autobus hero wordmark */
+.hero-text h1{
+    font-family:'Autobus','Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+    font-size:var(--hero-title-size);
+    color:var(--brand-strong) !important;
+    letter-spacing:-0.02em;
+    -webkit-text-stroke:.55px rgba(0,0,0,.55);
+    text-shadow:
+            0 1px 0 rgba(0,0,0,.35),
+            0 0 32px rgba(0,174,239,.34),
+            0 0 6px rgba(0,174,239,.5);
+}
+
+/* subtle language-specific tuning (in case you reuse later) */
+html[lang="en"] .hero-text h1{
+    font-size:clamp(2.6rem, 5vw, 5rem);
+}
+html[lang="es"] .hero-text h1{
+    font-size:clamp(2.5rem, 4.8vw, 4.9rem);
+}
+
+/* hero intro paragraph */
+.hero-text p{
+    font-size:clamp(1.02rem, 2vw, 1.35rem);
+    color:#ffffff !important;
+    margin-top:1.4rem; /* was 4rem – much tighter now */
+    text-shadow:
+            0 1px 0 rgba(0,0,0,.55),
+            0 0 18px rgba(0,0,0,.22);
+}
+.hero-text p strong{
+    color:#ffffff !important;
+    font-weight:800;
+}
+
+/* subheadline specific fine-tune */
+.hero .subheadline{
+    font-size:clamp(0.98rem, 1.2vw + 0.35rem, 1.25rem);
+    line-height:1.6;
+    max-width:62ch;
+    margin-top:1.1rem;
+    opacity:.96;
+}
+.hero .subheadline strong{
+    font-weight:700;
+}
+
+/* ---------- Hero social row --------------------------------------------- */
+
+/* keep hero pills on a single line on desktop */
+.hero .hero-social-row{
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:center;
+    justify-content:flex-start;
+    gap:.75rem;
+    margin:0 0 1rem;
+}
+
+/* slightly more compact hero chips vs project chips */
+.hero .hero-social-row .chip{
+    padding:.5rem .95rem;
+    font-size:.9rem;
+}
+
+/* email chip: prevent it from dwarfing the others on wide screens */
+.hero .hero-social-row .chip:nth-child(3){
+    max-width:100%;
+}
+
+/* ---------- Availability + CV ------------------------------------------- */
+
+.hero-availability{
+    display:inline-flex;
+    align-items:center;
+    margin-top:.9rem;
+}
+
+/* wrapper in case we add more CTAs later */
+.hero-actions{
+    margin-top:1.1rem;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:.75rem 1.15rem;
+    justify-content:flex-start;
+}
+
+/* CV button: keep it visually aligned with the badge */
+.hero-actions .chip-cta{
+    margin:0;
+}
+
+/* ---------- Photo column ------------------------------------------------- */
+
+.hero-image{
+    position:relative;
+    flex:0 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    /* nudge slightly towards center for better balance */
+    transform: translateX(14px);
+}
+
+/* radial glow behind the avatar */
+.hero-image::before{
+    content:"";
+    position:absolute;
+    inset:auto;
+    width:clamp(340px, 22vw, 410px);
+    height:clamp(340px, 22vw, 410px);
+    border-radius:50%;
+    background:
+            radial-gradient(circle at 30% 20%,
+            rgba(255,255,255,.28),
+            transparent 55%),
+            radial-gradient(circle at 50% 50%,
+            rgba(0,174,239,.32),
+            transparent 70%);
+    opacity:.85;
+    filter:blur(2px);
+    z-index:-1;
+}
+
+/* avatar */
+.hero-image img{
+    width:clamp(340px, 22vw, 390px);
+    height:clamp(340px, 22vw, 390px);
+    object-fit:cover;
+    border-radius:50%;
+    box-shadow:
+            0 18px 45px rgba(0,0,0,.75),
+            0 0 0 1px rgba(255,255,255,.06);
+    transform:translateZ(0);
+}
+
+
+/* =========================
+   ES hero title safety
+   (overrides earlier clamp)
+   ========================= */
+html[lang="es"] .hero-text h1{
+    font-size: clamp(2.15rem, 4.2vw, 4.35rem);
+    letter-spacing: -0.01em;
+}
+
+/* give ES a tiny bit more breathing room from the photo */
+html[lang="es"] .hero-content{
+    gap: 3.6rem;
+}
+
+
+
+/* small hover lift on desktops only */
+@media (hover:hover){
+    .hero-image img{
+        transition:transform .35s ease, box-shadow .35s ease;
+    }
+    .hero-image:hover img{
+        transform:translateY(-4px);
+        box-shadow:
+                0 26px 60px rgba(0,0,0,.88),
+                0 0 0 1px rgba(255,255,255,.08);
+    }
+}
+
+/* ---------- Tablet tweaks (layout stacks, already refined in responsive.css)
+   Only minor adjustments here so we don't fight responsive.css too much.
+--------------------------------------------------------------------------- */
+@media (max-width:1200px){
+    .hero-content{
+        gap:2.2rem;
+        width:min(92%, 52rem);
+    }
+}
+
+/* Let responsive.css handle the full mobile layout; we only tune tablet-ish. */
+@media (max-width:900px){
+    .hero{
+        padding-top:clamp(2.2rem, 6vh, 3rem);
+        padding-bottom:clamp(32px, 7vh, 56px);
+    }
+}

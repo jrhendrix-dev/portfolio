@@ -1,286 +1,540 @@
-@media (max-width: 1200px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-text {
-        text-align: center;
-    }
-    .hero-image img {
-        margin-left: 0;
-        width: 300px;
-        height: 300px;
-    }
-    section p, section ul, section h2 {
-        padding-left: 3rem;
-        padding-right: 3rem;
-    }
-    #about h2 {
-        padding-left: 3rem;
-    }
-    .projects-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+/* responsive.css — DROP-IN (hero email pill fit fixed)
+   Notes:
+   - Consolidated the hero social-row rules into ONE block (no duplicates later).
+   - Email pill now shrinks text + ellipsizes like your card chips.
+   - Generic .chip-row scrolling no longer overrides the hero-social-row.
+*/
 
-@media (max-width: 768px) {
-    .floating-nav {
-        display: none;
+/* --- Tablet / small desktop ------------------------------------------------ */
+@media (max-width:1200px){
+    .hero-content{
+        flex-direction:column;
+        text-align:center;
     }
-
-    .mobile-menu-toggle {
-        position: fixed;
-        top: 1rem;
-        left: 1rem;
-        z-index: 101;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
+    .hero-text{
+        order:2;
+        width:100%;
+        padding:1rem;
+        display:block;
+        text-align:center;
+        max-width:100%;
     }
-
-    .mobile-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        z-index: 100;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-    }
-
-    .mobile-nav.active {
-        transform: translateY(0);
-    }
-
-    .mobile-nav a {
-        color: white;
-        font-size: 1.8rem;
-        text-decoration: none;
-    }
-
-
-    body {
-        font-size: 18px;
-    }
-    .hero{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        height: 100vh;
-        padding: 0;
-    }
-    .hero-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 0;
-        gap: 1rem;
-    }
-    .hero-text, .hero-image {
-        width: 100%;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
-
-    .hero-image {
-        order: 1;
-        width: 100%;
-        display: block;
-        margin-top: 10rem;
-        align-items: center;
+    .subheadline{padding:0;text-align:left}
+    .hero-image{
+        order:1;
+        width:100%;
+        display:block;
+        margin-top:3.5rem;   /* closer to the top than before */
+        align-items:center;
         margin-left:0;
     }
-    .hero-image img {
-        width: 220px;
-        height: 220px;
-        max-width: 80vw;
-        max-height: 30vh;
-    }
-    .hero-text {
-        order: 2;
-        width: 100%;
-        padding: 1rem;
-        display: block;
-        text-align: center;
-        max-width: 100%;
-        /*z-index: 2; !* bring it above the image if overlapping *!*/
-    }
-    .hero-text h1 {
-        font-size: 9vw;
-        text-align: center;
-    }
-    .hero-text p, #about p {
-        font-size: 1.4rem;
-        margin-top: 1rem;
-    }
-    section {
-        max-width: 100%;
-        width: 100%;
-    }
-    section p {
-        padding-left: 0;
-        padding-right: 0;
-        text-align:left;
-        margin: 0 auto;
-        max-width: 800px;
+    .hero-image img{
+        margin-left:0;
+        width:300px;
+        height:300px;
     }
 
-    .subheadline {
-        padding: 0;
-        text-align: left;
+    /* let the headline wrap on smaller screens so nothing overlaps */
+    .headline-with-logo{flex-wrap:wrap;justify-content:center}
+    .title-lines{ text-align:left; }
+
+    #about h2{padding-left:3rem}
+    .projects-grid{flex-direction:column;align-items:center}
+    section{max-width:100%;width:100%}
+    .projects-section h2,
+    section h2{font-size:2.5rem;padding-left:2rem}
+    .projects-section{
+        padding-top: clamp(28px, 6vh, 64px);
+        padding-bottom: 40px;
     }
-    .subheadline a{
-        font-size: 1.0rem;
+    .projects-grid{
+        flex-direction:column;
+        align-items:center;
+        gap:2rem;
+        width:100%;
     }
-    .language-switcher {
-        z-index: 50;
-    }
-    .skills-column {
-        min-width: 100%;
-    }
-    .skills-column h3 {
-        font-size: 2.5rem;
-    }
-    .skills-column li {
-        font-size: 1.2rem;
-    }
-    .projects-section h2, section h2 {
-        font-size: 2.5rem;
-        padding-left: 2rem;
-    }
-    .projects-section  {
-        padding: 0;
-    }
-    .projects-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        width: 100%;
-    }
-    .project-card {
-        flex-direction: column;
-        align-items: center;
-        padding: 0.2rem;
-        width: 100%;
-        max-width: 400px;
+    .project-card{
+        flex-direction:column;
+        align-items:center;
+        padding:.2rem;
+        width:100%;
+        max-width:400px;
     }
     .project-card h3,
-    .project-card p {
-        font-size: 1rem;
-        text-align: left;
-        width: 100%;
+    .project-card p{
+        font-size:1rem;
+        text-align:left;
+        width:100%;
     }
-
     .project-links{
-        text-align: center;
-        font-size: 1rem;
-        width: 100%;
+        text-align:center;
+        font-size:1rem;
+        width:100%;
     }
-    .project-card img {
-        width: 100%;
-        height: auto;
+    .project-card img{width:100%;height:auto}
+}
+
+/* Hide floating & bottom nav on tablets/phones */
+@media (max-width:1024px){
+    .floating-nav{display:none!important}
+    .bottom-nav{display:none!important}
+}
+
+@media (max-width: 900px){
+    .hero-content{ width: 92%; gap: 2rem; }
+    .chip-row{ gap:.6rem; }
+    .availability-badge{ font-size:.9rem; }
+    .hero-image img{ width: 280px; height: 280px; }
+    :root{ --logo-size: 160px; }
+
+    .project-card{
+        flex-direction:column;
+        padding:1.25rem 1.25rem;
+    }
+    .project-card img{
+        max-width:100%;
+        flex:0 0 auto;
     }
 
-    .flag-button, .flag-button-en {
-        width: 45px;
-        height: 45px;
+    .project-main{
+        flex-direction:column;
     }
-    .arrow-icon {
-        width: 36px;
-        height: 36px;
+    .project-main img{
+        max-width:100%;
+        flex:0 0 auto;
     }
-    .explore-btn {
-        padding: 0.2rem 0.2rem;
-        font-size: 1rem;
-        margin-top:0.1rem;
+
+    /* Fix Task Manager screenshot on mobile */
+    .project-card--with-demo .project-main img,
+    .project-card--with-demo .project-img{
+        flex:0 0 auto;
+        max-width:100%;
+        width:100%;
+        display:block;
+        margin:0 auto 1rem;
+        border-radius:1rem;
     }
+}
+
+/* --- Phones / phablets ---------------------------------------------------- */
+@media (max-width:768px){
+    .mobile-menu-toggle{
+        display:block;
+        position:fixed;
+        top:1rem;
+        left:1rem;
+        z-index:101;
+        background:none;
+        border:none;
+        font-size:2rem;
+        color:#fff;
+        cursor:pointer;
+    }
+    .mobile-nav{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100vh;
+        background:rgba(0,0,0,.95);
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        padding-top:clamp(.5rem,env(safe-area-inset-top) + .5rem,1.25rem);
+        gap:2rem;
+        z-index:100;
+        transform:translateY(-100%);
+        transition:transform .3s;
+        visibility:hidden;
+        pointer-events:none;
+    }
+    .mobile-nav .brand{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:0 0 1rem;
+        line-height:1;
+    }
+    .mobile-nav .brand img{
+        display:block;
+        width:150px;
+        height:150px;
+        margin:0 auto;
+    }
+    .mobile-nav.active{
+        transform:translateY(0);
+        visibility:visible;
+        pointer-events:auto;
+    }
+    .mobile-nav a{
+        color:#fff;
+        font-size:1.8rem;
+        text-decoration:none;
+    }
+
+    /* HERO LAYOUT ON PHONES – compact so full hero fits */
+    .hero{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        text-align:center;
+        min-height:auto;
+        height:auto;
+        padding:1.2rem 1.25rem 2rem;
+    }
+
+    body{font-size:18px}
+    .hero-content{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        width:100%;
+        padding:0;
+        gap:.6rem;              /* smaller gap between photo and title */
+    }
+    .hero-text,
+    .hero-image{
+        width:100%;
+        text-align:center;
+        margin:0;
+        padding:0;
+    }
+    .hero-image{
+        order:1;
+        width:100%;
+        display:block;
+        margin-top:1.2rem;   /* much closer to top */
+        align-items:center;
+        margin-left:0;
+    }
+    .hero-image img{
+        width:190px;
+        height:190px;
+        max-width:80vw;
+        max-height:30vh;
+    }
+
+    /* Smaller logo + title on phones, keep in one row */
+    .hero-text .headline-with-logo{
+        font-size:clamp(1.2rem, 5vw, 1.8rem);
+        gap:.6rem;
+        flex-wrap:nowrap;
+        justify-content:center;
+        margin-top:.6rem;
+        margin-bottom:1rem;   /* space before the LinkedIn/GitHub/email pills */
+    }
+    .hero-text .headline-logo{
+        width:60px;
+    }
+
+    .hero-text{
+        order:2;
+        width:100%;
+        padding:1rem;
+        display:block;
+        text-align:center;
+        max-width:100%;
+    }
+
+    /* =========================
+       HERO SOCIAL PILLS (FINAL)
+       ========================= */
+
+    /* 3 pills visible, never scroll */
+    .hero .hero-social-row{
+        display:flex;
+        flex-wrap:nowrap;
+        justify-content:center;
+        gap:.32rem;
+        overflow:hidden;
+        width:100%;
+    }
+
+    /* Base pill sizing */
+    .hero .hero-social-row .chip{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        gap:.32rem;
+
+        flex:1 1 0;              /* all share row equally */
+        min-width:0;             /* allow shrinking */
+        box-sizing:border-box;
+
+        padding:.26rem .52rem;
+        font-size:clamp(.56rem, 2.35vw, .74rem);
+        border-radius:9999px;
+        white-space:nowrap;
+    }
+
+    .hero .hero-social-row .chip i{
+        font-size:clamp(.85rem, 3.1vw, 1rem);
+        transform:translateY(0);
+        flex:0 0 auto;
+    }
+
+    /* Email pill: *lock it inside* by shrinking + ellipsis on label */
+    .hero .hero-social-row .chip[href^="mailto:"]{
+        flex:1.25 1 0;           /* slightly more room, not huge */
+        padding:.24rem .44rem;   /* tighter sides */
+        font-size:clamp(.44rem, 1.9vw, .64rem); /* can go tiny */
+        letter-spacing:-0.35px;
+    }
+
+    /* Ellipsis like your card chips */
+    .hero .hero-social-row .chip[href^="mailto:"] .label{
+        min-width:0;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        display:block;
+        line-height:1;
+    }
+
+    .hero .hero-social-row .chip[href^="mailto:"] i{
+        font-size:clamp(.78rem, 2.8vw, .95rem);
+    }
+
+    /* Keep chip-row scrollable elsewhere, but NOT the hero-social-row */
+    .hero .chip-row:not(.hero-social-row){
+        display:flex;
+        flex-wrap:nowrap;
+        justify-content:center;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        gap:.35rem;
+        padding-bottom:.35rem;
+    }
+
+    /* Generic hero chips (NOT social row) */
+    .hero :not(.hero-social-row) > .chip{
+        padding:.26rem .55rem;
+        font-size:.54rem;
+        white-space:nowrap;
+    }
+    .hero .chip--email .label{ display:none; }
+
+    /* Availability + CV: keep them stacked, centered on phones */
+    .hero-cta-wrapper{
+        align-items:center;
+        margin-top:.9rem;
+    }
+    .hero-availability,
+    .hero-cv-btn{
+        align-self:center;
+    }
+
+    .hero-text h1{font-size:9vw;text-align:center}
+    .hero-text p,
+    #about p{font-size:1.4rem;margin-top:1rem}
+
+    section{max-width:100%;width:100%}
+    section p{
+        padding-left:0;
+        padding-right:0;
+        text-align:left;
+        margin:0 auto;
+        max-width:800px;
+    }
+
+    .subheadline{
+        padding:0;
+        text-align:left;
+        margin-top:1rem;
+    }
+    .subheadline a{font-size:1rem}
+    .subheadline a.chip-cta{
+        margin-top:.8rem;
+        font-size:.85rem;
+        padding:.55rem 1rem;
+    }
+
+    .hero-availability{
+        margin-top:.9rem;
+        justify-content:center;
+    }
+
+    /* Hero actions row on mobile: same-row, but can wrap if needed */
+    .hero-actions{
+        justify-content:center;
+        gap:.6rem;
+        margin-top:1rem;
+    }
+
+    .skills-column{min-width:100%}
+    .skills-column h3{font-size:2.5rem}
+    .skills-column li{font-size:1.2rem}
+
+    .projects-section h2,
+    section h2{font-size:2.5rem;padding-left:2rem}
+
+    #projects-position{
+        margin-top:clamp(6px, 1.0vh, 8px);
+    }
+    .projects-section{
+        padding-top:clamp(10px, 2.5vh, 20px);
+        padding-bottom: 40px;
+    }
+    .projects-grid{
+        width:100%;
+        max-width:100%;
+        margin:0;
+        padding:0;
+    }
+    .project-card{
+        width:100%;
+        max-width:100%;
+        margin:0;
+        padding:.5rem;
+        box-sizing:border-box;
+    }
+    .project-card h3,
+    .project-card p{
+        font-size:1rem;
+        text-align:left;
+        width:100%;
+    }
+    .project-links{
+        text-align:center;
+        font-size:1rem;
+        width:100%;
+    }
+    .project-card img{width:100%;height:auto}
+
+    /* Hide Task Manager Live Demo on phones */
+    .project-card--with-demo #demoButton,
+    .project-card--with-demo #live-demo{
+        display:none !important;
+    }
+
+    .flag-button,
+    .flag-button-en{width:45px;height:45px}
+    .arrow-icon{width:36px;height:36px}
+    .explore-btn{ padding:.45rem .75rem; font-size:1rem; margin-top:.75rem; }
+
     .floating-nav ul,
-    .bottom-nav ul {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
+    .bottom-nav ul{flex-direction:column;gap:.75rem}
     .floating-nav,
-    .bottom-nav {
-        left: 50%;
-        transform: translateX(-50%);
+    .bottom-nav{left:50%;transform:translateX(-50%)}
+
+    /* Footer stacks: logo ON TOP of the contact block */
+    footer > .footer-inner{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        gap:1rem;
+        width:100%;
+        padding:0 1rem;
     }
-
-
-
+    footer .footer-brand{ order:-1; }
+    footer .footer-spacer{ display:none; }
+    footer .footer-brand img{ width:120px; height:120px; }
 }
 
-@media (min-width: 769px) {
+@media (min-width:769px){
     .mobile-menu-toggle,
-    .mobile-nav {
-        display: none !important;
+    .mobile-nav{display:none!important}
+}
+
+@media (max-width: 600px){
+    :root{ --logo-size: 120px; }
+    footer > .footer-inner{
+        grid-template-columns: 1fr;
+        text-align:center;
+        gap:1rem;
+    }
+    footer .footer-brand,
+    footer .footer-center,
+    footer .footer-spacer{
+        grid-column:auto;
+        justify-self:center;
     }
 }
 
-@media (max-width: 480px) {
+/* Small phones -------------------------------------------------------------- */
+@media (max-width: 520px){
+    :root{ --logo-size: 120px; }
 
-    .mobile-nav.active {
-        transform: translateY(0);
-    }
-
-    .mobile-nav a {
-        color: white;
-        font-size: 1.8rem;
-        text-decoration: none;
+    .hero-image img{
+        width: 180px;
+        height: 180px;
     }
 
-    .hero-image img {
-        width: 150px;
-        height: 150px;
-        max-width: 80vw;
-        max-height: 30vh;
-    }
-    .hero-text {
-        order: 2;
-        width: 100%;
-        padding: 1rem;
-        display: block;
-        text-align: center;
-    }
-    .hero-text h1 {
-        font-size: 11vw;
-    }
-    .scroll-arrow {
-        width: 50px;
-        height: 50px;
+    .tech-list .chip{
+        padding:.28rem .6rem;
+        font-size:.75rem;
     }
 
-    footer {
-        font-size: 1rem;
-        text-align: center;
+    /* More squeeze for Galaxy Note / SE widths */
+    .hero .hero-social-row{
+        gap:.28rem;
     }
+    .hero .hero-social-row .chip{
+        padding:.22rem .44rem;
+        font-size:clamp(.52rem, 2.2vw, .7rem);
+    }
+    .hero .hero-social-row .chip[href^="mailto:"]{
+        flex:1.35 1 0;
+        font-size:clamp(.40rem, 1.7vw, .6rem);
+        padding:.20rem .36rem;
+        letter-spacing:-0.45px;
+    }
+
+    footer > .footer-inner{
+        grid-template-columns: 1fr;
+        text-align:center;
+        gap:1rem;
+    }
+    footer .footer-brand,
+    footer .footer-center,
+    footer .footer-spacer{
+        grid-column:auto;
+        justify-self:center;
+    }
+}
+
+@media (max-width:480px){
+    .mobile-nav.active{transform:translateY(0)}
+    .mobile-nav a{color:#fff;font-size:1.8rem;text-decoration:none}
+
+    .hero-image img{
+        width:150px;
+        height:150px;
+        max-width:80vw;
+        max-height:30vh;
+    }
+    .hero-text{
+        order:2;
+        width:100%;
+        padding:1rem;
+        display:block;
+        text-align:center;
+    }
+    .hero-text h1{font-size:11vw}
+    .scroll-arrow{width:50px;height:50px}
+
+    /* Hard floor for very narrow phones */
+    .hero .hero-social-row .chip[href^="mailto:"]{
+        font-size:clamp(.36rem, 1.6vw, .56rem);
+        padding:.18rem .32rem;
+    }
+
+    footer{font-size:1rem;text-align:center}
+    .footer-inner{
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+    }
+    .footer-center{ text-align:center;margin:0 auto }
+    .footer-brand img{width:64px;height:64px}
 
     .floating-nav li,
-    .bottom-nav li {
-        font-size: 0.9rem;
-    }
-    .skills-column h3 {
-        font-size: 1.8rem;
-    }
-    .skills-column li {
-        font-size: 1rem;
-    }
-}
-/* Prevent horizontal scroll on all screens */
-body, html {
-    overflow-x: hidden;
+    .bottom-nav li{font-size:.9rem}
+    .skills-column h3{font-size:1.8rem}
+    .skills-column li{font-size:1rem}
 }

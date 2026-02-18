@@ -1,0 +1,36 @@
+/* 3) GLOBAL BACKGROUND (brand-tuned, darker, no artifacts) */
+.body{
+    min-height:100vh; position:relative; color:#eaf2f8;
+
+    --bg-deep:#050A0F;
+    --bg-mid:  color-mix(in srgb, #08131E 82%, var(--brand) 18%);
+    --bg-end:  color-mix(in srgb, #061018 88%, var(--brand) 12%);
+
+    background:
+            radial-gradient(1200px 800px at 78% 26%,
+            color-mix(in srgb, var(--brand) 22%, transparent) 0%, transparent 62%),
+            radial-gradient(1100px 720px at 18% 78%,
+            color-mix(in srgb, var(--brand) 17%, transparent) 0%, transparent 66%),
+
+            linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-mid) 42%, var(--bg-end) 100%);
+    background-blend-mode: screen, screen, normal;
+    background-attachment: fixed, fixed, fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* If you still see a small dot/oval, uncomment the next line to disable the grain overlay entirely */
+/* .body::before, .body::after { display:none !important; } */
+
+.body::before{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.04; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'>\
+<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter>\
+<rect width='160' height='160' filter='url(%23n)' opacity='0.6'/></svg>");
+    background-size:160px 160px;
+}
+.body::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background: radial-gradient(1200px circle at 50% 50%, transparent 58%, rgba(0,0,0,.45) 100%);
+}
