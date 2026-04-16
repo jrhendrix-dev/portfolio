@@ -45,7 +45,6 @@
             "projects.p5.title": "GastroControl — Restaurant Operations Platform (In progress)",
             "projects.p5.date": "December 2025 — Present",
             "projects.p5.desc": "In-progress restaurant operations platform built with Spring Boot. Focused on clean architecture, role-based access, and robust data integrity with Flyway migrations. Designed to run reproducibly with Docker from day one, with transactional email wiring and a strong backend-first foundation.",
-            "projects.p5.status": "In progress",
 
 
             "skills.title": "Skills & Technologies",
@@ -102,7 +101,6 @@
             "projects.p5.title": "GastroControl — Plataforma de Operaciones para Restaurantes (En desarrollo)",
             "projects.p5.date": "Diciembre 2025 — Actualidad",
             "projects.p5.desc": "Proyecto en desarrollo para operaciones de restaurante construido con Spring Boot. Enfocado en arquitectura limpia, control de acceso por roles e integridad de datos con migraciones Flyway. Pensado para ejecutarse de forma reproducible con Docker desde el primer día, con wiring de emails transaccionales y una base backend-first sólida.",
-            "projects.p5.status": "En desarrollo",
 
             "skills.title": "Habilidades y Tecnologías",
             "skills.frontend": "Frontend",
