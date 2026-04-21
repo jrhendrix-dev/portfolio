@@ -118,17 +118,24 @@
 
 /* --- Phones / phablets ---------------------------------------------------- */
 @media (max-width:768px){
-    .mobile-menu-toggle{
-        display:block;
-        position:fixed;
-        top:1rem;
-        left:1rem;
-        z-index:101;
-        background:none;
-        border:none;
-        font-size:2rem;
-        color:#fff;
-        cursor:pointer;
+    /* ── Hamburger toggle: give it a visible background so it reads clearly ── */
+    .mobile-menu-toggle {
+        display: block;
+        position: fixed;
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 101;
+        background: rgba(10, 10, 10, 0.75);   /* dark pill — won't bleed into content */
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        padding: 0.3rem 0.55rem;
+        font-size: 1.8rem;
+        line-height: 1;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
     .mobile-nav{
         position:fixed;
@@ -358,12 +365,16 @@
     }
 
     /* Hero actions row on mobile: same-row, but can wrap if needed */
-    .hero-actions{
-        justify-content:center;
-        gap:.6rem;
-        margin-top:1rem;
+    /* ── CV download button: larger on mobile ── */
+    .hero-actions .chip-cta {
+        /* ... above styles ... */
+        animation: cta-pulse 2.8s ease-in-out infinite;
     }
 
+    @keyframes cta-pulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(var(--brand-rgb, 0, 200, 200), 0.4); }
+        50%       { box-shadow: 0 0 0 8px rgba(var(--brand-rgb, 0, 200, 200), 0.0); }
+    }
     .skills-column{min-width:100%}
     .skills-column h3{font-size:2.5rem}
     .skills-column li{font-size:1.2rem}
