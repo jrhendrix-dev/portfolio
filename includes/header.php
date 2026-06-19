@@ -2,9 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Jonathan Hendrix - Portfolio</title>
-    <meta name="description" content="Portfolio of Jonathan Hendrix, Full-Stack Developer based in Seville, Spain.">
+    <title>Jonathan Hendrix | Backend Developer — Seville, Spain</title>
+    <meta name="description" content="Portfolio of Jonathan Hendrix, Full-Stack Developer based in Seville, Spain. Specialising in Java Spring Boot, Angular, and scalable web applications.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="n-TbdM7XyYdbQ9G4wzyEBvbdjtkcXdb0tRnXtLBLjEI" />
+    <meta name="msvalidate.01" content="2DFA22B17F841808752354B9EE459080" />
+
+    <!-- ✅ Canonical -->
+    <link rel="canonical" href="https://jonathan-hendrix.dev/" />
+
+    <!-- ✅ Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://jonathan-hendrix.dev/" />
+    <meta property="og:title"       content="Jonathan Hendrix | Backend Developer — Seville, Spain" />
+    <meta property="og:description" content="Full-Stack Developer based in Seville. Java Spring Boot, Angular, Docker. Available for work." />
+    <meta property="og:image"       content="https://jonathan-hendrix.dev/pics/profile.png" />
+    <meta property="og:locale"      content="en_GB" />
+    <meta property="og:site_name"   content="Jonathan Hendrix" />
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Jonathan Hendrix | Backend Developer — Seville, Spain" />
+    <meta name="twitter:description" content="Full-Stack Developer based in Seville. Java Spring Boot, Angular, Docker." />
+    <meta name="twitter:image"       content="https://jonathan-hendrix.dev/pics/profile.png" />
+
+    <!-- ✅ Schema.org JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Person",
+                    "@id": "https://jonathan-hendrix.dev/#person",
+                    "name": "Jonathan Hendrix",
+                    "url": "https://jonathan-hendrix.dev",
+                    "image": "https://jonathan-hendrix.dev/pics/profile.png",
+                    "jobTitle": "Full-Stack Developer",
+                    "description": "Backend Developer based in Seville, Spain, specialising in Java Spring Boot, Angular, and scalable web applications.",
+                    "email": "jrhendrixdev@gmail.com",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Sevilla",
+                        "addressRegion": "Andalucía",
+                        "addressCountry": "ES"
+                    },
+                    "sameAs": [
+                        "https://www.linkedin.com/in/jrhendrix-dev",
+                        "https://github.com/jrhendrix-dev"
+                    ],
+                    "knowsAbout": ["Java", "Spring Boot", "Angular", "TypeScript", "Docker", "MySQL", "SEO"]
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://jonathan-hendrix.dev/#website",
+                    "name": "Jonathan Hendrix — Portfolio",
+                    "url": "https://jonathan-hendrix.dev",
+                    "inLanguage": ["en", "es"],
+                    "about": { "@id": "https://jonathan-hendrix.dev/#person" }
+                }
+            ]
+        }
+    </script>
+
     <link rel="icon" type="image/png" href="/logo/favicon.png">
 
     <!-- FontAwesome for icons -->
@@ -16,6 +75,7 @@
 
     <!-- Custom CSS & JS -->
     <link rel="stylesheet" href="/css/main.css">
+
     <script src="/js/index.js" defer></script>
     <script src="/js/i18n.js" defer></script>
 </head>

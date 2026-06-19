@@ -4,13 +4,56 @@
 
     <div class="projects-grid">
 
+        <!-- Project 6 – emecoms (Most recent) -->
+        <div class="project-card">
+            <img src="/pics/emecoms.png" alt="emecoms SEO agency website screenshot" class="project-img" loading="lazy">
+
+            <div class="project-card-content">
+                <h3 data-i18n="projects.p6.title">emecoms — Local SEO Agency Website</h3>
+                <p data-i18n="projects.p6.date">May 2026 – Present</p>
+
+                <!-- emecoms chips -->
+                <div class="chip-row tech-list" aria-label="Technologies used">
+                    <span class="chip"><i class="devicon-angularjs-plain colored"></i> Angular</span>
+                    <span class="chip"><img src="https://analogjs.org/img/logos/analog-logo.svg" alt="Analog" style="width:14px;height:14px;vertical-align:middle;"> Analog</span>
+                    <span class="chip"><img src="/pics/astro-logo.svg" alt="Astro" style="width:14px;height:14px;vertical-align:middle;"> Astro</span>
+                    <span class="chip"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+                    <span class="chip"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
+                    <span class="chip"><i class="devicon-vitejs-plain colored"></i> Vite</span>
+                    <span class="chip"><i class="devicon-spring-plain colored"></i> Spring Boot</span>
+                    <span class="chip"><i class="devicon-wordpress-plain colored"></i> WordPress</span>
+                    <span class="chip"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                </div>
+
+                <!-- emecoms description (SSR fallback) -->
+                <p data-i18n="projects.p6.desc">
+                    Full-stack marketing site for a local SEO agency. Public-facing pages are built with Astro for near-perfect
+                    PageSpeed scores (98 mobile), while the interactive tools dashboard and live site auditor remain on Angular/Analog SSR.
+                    Features a Lighthouse-powered audit tool with transactional email delivery via Resend,
+                    a Google Search Console integration for connected clients, and a headless WordPress blog —
+                    all deployed via Docker Compose with nginx routing between the two frontends.
+                </p>
+
+                <div class="project-links chip-row">
+                    <a class="chip chip-link" href="https://github.com/jrhendrix-dev/emecom" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <span class="label" data-i18n="projects.actions.github">View on GitHub</span>
+                    </a>
+                    <a class="chip chip-cta" href="https://emecoms.es" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
+                        <span class="label" data-i18n="projects.actions.live">Live Site</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Project 5 – GastroControl (In progress) -->
         <div class="project-card">
             <img src="/pics/GastroControl-logo.png" alt="GastroControl logo" class="project-img" loading="lazy">
 
             <div class="project-card-content">
                 <h3 data-i18n="projects.p5.title">GastroControl — Restaurant Operations Platform</h3>
-                <p data-i18n="projects.p5.date">December 2025 - Present</p>
+                <p data-i18n="projects.p5.date">December 2025 – April 18, 2026</p>
 
                 <div class="chip-row tech-list" aria-label="Technologies used">
                     <span class="chip"><i class="devicon-java-plain colored"></i> Java</span>
