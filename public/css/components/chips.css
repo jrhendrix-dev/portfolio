@@ -1,220 +1,55 @@
-/* ==========================================================================
-   chips.css — Tech & Action Pills (robust, CTA-friendly)
-   ========================================================================== */
+/* =============================================================
+   CHIPS.CSS — Social chips, CTA chips
+   ============================================================= */
 
-/* Rows of pills */
-.chip-row{
-    display:flex; flex-wrap:wrap; align-items:center;
-    gap:.55rem .75rem;
-}
-
-/* Base pill (tech pills) */
-.chip{
-    display:inline-flex; align-items:center;
-    gap:.7rem;
-    padding:.62rem 1.05rem;
-    border-radius:9999px;
-    background: rgba(255,255,255,.06);
-    color:#e6eef6;
-    border:1px solid rgba(255,255,255,.12);
-    text-decoration:none; white-space:nowrap; line-height:1;
-
-    /* 🔥 KEY FIX: lock chip size so it never inherits body 22px */
-    font-size:.9rem;
-
-    transition: transform .2s, filter .2s, background .2s, color .2s, border-color .2s;
-}
-
-
-/* ✅ Defensive: hero social chips MUST be compact */
-.hero .hero-social-row > .chip{
-    font-size:.9rem !important;
-    padding:.5rem .95rem !important;
-    line-height:1 !important;
-}
-
-.chip:hover{ transform:translateY(-1px); filter:brightness(1.05); border-color:rgba(255,255,255,.18); }
-.chip .label{ display:inline-block; line-height:1; }
-/* slightly larger, clearer icons */
-.chip i{
-    font-size:1.2em;
-    transform:translateY(1px); /* keep optical centering */
-}
-
-
-/* ==========================================================================
-   Availability badge (hero) — restore original look and isolate from .chip
-   ========================================================================== */
-.availability-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:.55rem;
-    padding:.25rem .50rem;
-    border-radius:9999px;
-    /* rich green, translucent to match hero background */
-    background: linear-gradient(135deg, rgba(6,44,32,.78), rgba(6,44,32,.62));
-    color:#dff6ea;
-    border:1px solid rgba(46,204,113,.38);
-    box-shadow: 0 8px 22px rgba(0,0,0,.18),
-    inset 0 0 0 1px rgba(255,255,255,.04);
-    line-height:1;
-    white-space:nowrap;
-    font-weight:700;
-}
-
-/* glowing green dot */
-.availability-badge .dot{
-    display: inline-block;
-    width:.68rem;
-    height:.68rem;
-    min-width: .68rem;
-    flex-shrink: 0;
-    border-radius:50%;
-    background:#2ecc71;
-    box-shadow:0 0 10px rgba(46,204,113,1);
-    animation:availability-pulse 1.6s ease-in-out infinite;
-}
-
-@keyframes availability-pulse{
-    0%{
-        transform:scale(1);
-        box-shadow:0 0 6px rgba(46,204,113,.7);
-    }
-    50%{
-        transform:scale(1.18);
-        box-shadow:0 0 16px rgba(46,204,113,1);
-    }
-    100%{
-        transform:scale(1);
-        box-shadow:0 0 6px rgba(46,204,113,.7);
-    }
-}
-
-/* subtle hover (optional) */
-.availability-badge:hover{
-    filter:brightness(1.05);
-    border-color: rgba(46,204,113,.48);
-}
-
-/* Ensure chips styling never bleeds into the badge */
-.availability-badge .label{ line-height:1; }
-.availability-badge i{ transform:none; font-size:1em; } /* neutralize global .chip i rule */
-
-
-/* -------------------- Action variants -------------------- */
-
-/* Secondary action (GitHub) */
-.chip-link{
-    background: rgba(255,255,255,.10);
-    border-color: rgba(255,255,255,.22);
-    font-weight:700;
-}
-.chip-link:hover{ filter:brightness(1.07); border-color:rgba(255,255,255,.32); }
-
-/* Primary CTA (Live Demo / Live Site) */
-.chip-cta{
-    background: linear-gradient(135deg,
-    color-mix(in srgb, var(--brand) 92%, #ffffff 8%),
-    color-mix(in srgb, var(--brand) 70%, #000 30%));
-    border:1px solid color-mix(in srgb, var(--brand) 70%, #fff 30%);
-    color:#fff; font-weight:800;
-    box-shadow: 0 10px 26px rgba(0,0,0,.22),
-    0 0 0 2px color-mix(in srgb, var(--brand) 18%, transparent);
-}
-.chip-cta:hover{ filter:brightness(1.06); transform:translateY(-1px); }
-.chip-cta:focus-visible{ outline:3px solid color-mix(in srgb, var(--brand) 45%, #fff 55%); outline-offset:2px; }
-
-/* ----------------- Project card integration ---------------- */
-.project-card .tech-list{ margin-top:.75rem; }
-.project-card .project-links{ margin-top:.75rem; }
-
-/* Keep pills clickable + avoid legacy link overrides */
-.tech-list .chip{
-    padding: .35rem .75rem;
-    font-size: .82rem;
-    opacity: .95;
-}
-
-/* Keep CTAs chunkier and more “button-like” */
-.project-links .chip{
-    padding: .6rem 1.15rem;
-    font-size: .9rem;
-}
-.project-links .chip-cta{
-    box-shadow: 0 10px 26px rgba(0,0,0,.25);
-}
-
-/* -----------------------------------------------------------
-   CRITICAL: Make the Live Demo BUTTON a pill no matter what
-   (overrides any resets or later CSS)
-   ----------------------------------------------------------- */
-.project-links #demoButton{ all: unset; } /* nuke native button look */
-#demoButton.chip{
-    display:inline-flex; align-items:center; cursor:pointer;
-    gap:.7rem;                               /* enforce gap */
-    padding:.68rem 1.15rem;                  /* beefier than tech pills */
-    border-radius:9999px;
-    background: linear-gradient(135deg,
-    color-mix(in srgb, var(--brand) 95%, #ffffff 5%),
-    color-mix(in srgb, var(--brand) 70%, #000 30%));
-    border:1px solid color-mix(in srgb, var(--brand) 70%, #fff 30%);
-    color:#fff; font-weight:800;
-    box-shadow: 0 12px 28px rgba(0,0,0,.28),
-    0 0 0 2px color-mix(in srgb, var(--brand) 18%, transparent);
-    transform:translateZ(0);
-}
-#demoButton.chip:hover{ filter:brightness(1.07); transform:translateY(-2px); }
-#demoButton.chip:focus-visible{ outline:3px solid color-mix(in srgb, var(--brand) 45%, #fff 55%); outline-offset:2px; }
-
-/* Ensure icon always has breathing room even when JS rewrites innerHTML */
-#demoButton.chip i{ margin-right:.6rem; }   /* Play/Pause spacing, always */
-
-/* ------------------- Demo panel (as-is) ------------------- */
-#live-demo{
-    max-height:0; opacity:0; overflow:hidden;
-    transition:max-height .6s ease, opacity .4s ease;
-    padding:1.2rem; border-radius:.5rem;
-}
-#live-demo.open{ margin-top:1rem; max-height:1500px; opacity:1; }
-#live-demo.open:hover{ box-shadow:0 0 5px rgba(0,123,255,.4) }
-
-
-/* ============================================================
-   HERO social chips — HARD LOCK size (fix ES/EN mismatch)
-   Put this at the very end of chips.css
-   ============================================================ */
-
-.hero .hero-social-row{
-    font-size: 0.9rem !important;  /* sets the inheritance baseline */
-    line-height: 1 !important;
-}
-
-.hero .hero-social-row .chip{
-    font-size: inherit !important; /* always 0.9rem now */
-    padding: .5rem .95rem !important;
-    line-height: 1 !important;
-}
-.hero .hero-social-row .chip i{
-    font-size: 1.2em !important;   /* keep icons consistent too */
-    transform: translateY(1px);
-}
-
-
-/* ======================================================================
-   HERO social chips — HARD LOCK size across languages
-   Put this at the END of chips.css so it wins the cascade.
-   ====================================================================== */
-
-.hero.hero-social-fix .hero-social-row > a.chip,
-.hero .hero-social-row > a.chip{
-    font-size: 0.9rem !important;      /* 0.9 * 16 = 14.4px */
-    padding: 0.5rem 0.95rem !important;
-    line-height: 1 !important;
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    padding: 6px 16px;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: border-color var(--transition), color var(--transition), background var(--transition);
     white-space: nowrap;
 }
 
-/* icon optical centering inside hero pills */
-.hero .hero-social-row > a.chip i{
-    font-size: 1.1em !important;
-    transform: translateY(1px);
+.chip:hover {
+    border-color: var(--color-border-hover);
+    color: var(--color-text-primary);
+}
+
+.chip i,
+.chip svg {
+    font-size: 15px;
+    color: var(--color-emerald);
+}
+
+/* CTA variant */
+.chip-cta {
+    background: var(--color-emerald);
+    border-color: transparent;
+    color: var(--color-bg);
+    font-weight: 700;
+}
+
+.chip-cta:hover {
+    opacity: 0.88;
+    border-color: transparent;
+    color: var(--color-bg);
+}
+
+.chip-cta i,
+.chip-cta svg {
+    color: var(--color-bg);
+}
+
+.chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
 }

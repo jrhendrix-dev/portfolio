@@ -1,29 +1,104 @@
-/* 1) FONT IMPORTS */
+/* =============================================================
+   BASE.CSS — Resets, body, typography, grid overlay
+   ============================================================= */
 
-/* 2) BASE STYLES & RESETS */
-:root{
-    --brand:#00AEEF;
-    --brand-strong: color-mix(in srgb, var(--brand) 82%, white 18%);
-    --bg-0:#04070B;  /* darker */
-    --bg-1:#091017;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-    --title-size: clamp(3rem, 6.6vw, 5.5rem);
-    --hero-title-size: clamp(3.6rem, 9vw, 7rem);
-    --sticky-offset: 8rem;
-    --about-top-gap: clamp(3rem, 8vw, 10rem);
-    --hero-top-gap: clamp(4rem, 9vw, 12rem);
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-*{ margin:0; padding:0; box-sizing:border-box }
-html,body{ -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale }
-html{ scroll-behavior:smooth }
-
-body{
-    font-family:'Segoe UI',Roboto,sans-serif;
-    background: var(--bg-0);   /* use token, not #000 */
-    color:#ffffff; font-size:14.4px;
-    min-height:100vh; overflow-x:hidden; line-height:1.5;
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
-ul,ol{ list-style:none; padding-left:0; }
-li::marker{ content:none; }
+body {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    /* Dot grid overlay via background */
+    background-image:
+            linear-gradient(var(--grid-line) 1px, transparent 1px),
+            linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-attachment: fixed;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* --- Section label (eyebrow) --- */
+.section-label {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--color-emerald);
+    margin-bottom: 12px;
+}
+
+/* --- Section title --- */
+.section-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--color-text-primary);
+    line-height: 1.1;
+    margin-bottom: var(--space-lg);
+}
+
+.section-title span {
+    color: var(--color-emerald);
+}
+
+/* --- Divider --- */
+.section-divider {
+    border: none;
+    border-top: 1px solid var(--color-border-subtle);
+    margin: 0 var(--space-lg);
+}
+
+/* --- Accessibility --- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    clip: auto;
+    white-space: normal;
+}

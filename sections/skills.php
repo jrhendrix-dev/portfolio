@@ -1,51 +1,219 @@
-<section id="skills" class="skills--onecard">
+<section id="skills" class="section">
     <div id="skills-position"></div>
-    <h2 data-i18n="skills.title">Skills &amp; Technologies</h2>
+
+    <p class="section-label" data-i18n="skills.eyebrow">Technologies</p>
+    <h2 class="section-title" data-i18n="skills.title">Skills &amp; <span>stack</span></h2>
 
     <div class="skills-grid">
-        <div class="skills-column">
-            <h3><i class="fas fa-code" aria-hidden="true"></i> <span data-i18n="skills.frontend">Frontend</span></h3>
-            <ul>
-                <li><i class="devicon-html5-plain colored"></i> <strong>HTML5</strong></li>
-                <li><i class="devicon-css3-plain colored"></i> <strong>CSS3</strong></li>
-                <li><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</li>
-                <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
-                <li><i class="devicon-jquery-plain colored"></i> jQuery</li>
-                <li><i class="devicon-typescript-plain colored"></i> TypeScript</li>
-                <li><i class="devicon-bootstrap-plain colored"></i> Bootstrap</li>
-                <li><i class="devicon-angular-plain colored"></i> Angular</li>
-                <li><i class="devicon-react-original colored"></i> <span data-i18n="skills.reactBasics">React (Basics)</span></li>
+
+        <!-- ── Frontend ── -->
+        <div class="skill-card">
+            <div class="skill-card-header">
+                <div class="skill-card-icon" aria-hidden="true">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="skill-card-title" data-i18n="skills.frontend">Frontend</h3>
+            </div>
+            <ul class="skill-list">
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <i class="devicon-angularjs-plain colored" aria-hidden="true"></i> Angular 20
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <i class="devicon-typescript-plain colored" aria-hidden="true"></i> TypeScript
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <img src="/pics/astro-logo.svg" alt="" aria-hidden="true" style="width:14px;height:14px;vertical-align:middle;display:inline;"> Astro
+                        <span class="new-badge">new</span>
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <img src="https://analogjs.org/img/logos/analog-logo.svg" alt="" aria-hidden="true" style="width:14px;height:14px;vertical-align:middle;display:inline;"> Analog SSR
+                        <span class="new-badge">new</span>
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <i class="devicon-tailwindcss-plain colored" aria-hidden="true"></i> Tailwind CSS v4
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="devicon-html5-plain colored" aria-hidden="true"></i> HTML5
+                        &nbsp;/&nbsp;
+                        <i class="devicon-css3-plain colored" aria-hidden="true"></i> CSS3
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="devicon-javascript-plain colored" aria-hidden="true"></i> JavaScript
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="devicon-bootstrap-plain colored" aria-hidden="true"></i> Bootstrap
+                        &nbsp;·&nbsp;
+                        <i class="devicon-jquery-plain colored" aria-hidden="true"></i> jQuery
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="devicon-react-original colored" aria-hidden="true"></i>
+                        <span data-i18n="skills.reactBasics">React (basics)</span>
+                    </span>
+                </li>
             </ul>
         </div>
 
-        <div class="skills-column">
-            <h3><i class="fas fa-server" aria-hidden="true"></i> <span data-i18n="skills.backend">Backend</span></h3>
-            <ul>
-                <li><i class="devicon-php-plain colored"></i> <span data-i18n="skills.php">PHP (OOP &amp; Procedural)</span></li>
-                <li><i class="devicon-symfony-original colored"></i> Symfony</li>
-                <li><i class="devicon-java-plain colored"></i> Java</li>
-                <li><i class="devicon-spring-plain colored"></i> Spring Boot</li>
-                <li><i class="devicon-hibernate-plain colored"></i> Hibernate</li>
-                <li><i class="devicon-mysql-original colored"></i> MySQL</li>
-                <li><i class="devicon-azuresqldatabase-plain colored"></i> SQL</li>
-                <li><i class="devicon-postgresql-plain colored"></i> PostgreSQL</li>
+        <!-- ── Backend ── -->
+        <div class="skill-card">
+            <div class="skill-card-header">
+                <div class="skill-card-icon" aria-hidden="true">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <h3 class="skill-card-title" data-i18n="skills.backend">Backend</h3>
+            </div>
+            <ul class="skill-list">
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <i class="devicon-java-plain colored" aria-hidden="true"></i> Java 21
+                        &nbsp;/&nbsp;
+                        <i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <i class="devicon-hibernate-plain colored" aria-hidden="true"></i> Hibernate / JPA
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <i class="devicon-php-plain colored" aria-hidden="true"></i>
+                        <span data-i18n="skills.php">PHP (OOP &amp; Procedural)</span>
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="devicon-symfony-original colored" aria-hidden="true"></i> Symfony
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <i class="devicon-mysql-original colored" aria-hidden="true"></i> MySQL
+                        &nbsp;·&nbsp;
+                        <i class="devicon-postgresql-plain colored" aria-hidden="true"></i> PostgreSQL
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="devicon-azuresqldatabase-plain colored" aria-hidden="true"></i> SQL
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="devicon-wordpress-plain colored" aria-hidden="true"></i> WordPress headless
+                        <span class="new-badge">new</span>
+                    </span>
+                </li>
             </ul>
         </div>
 
-        <div class="skills-column">
-            <h3><i class="fas fa-tools" aria-hidden="true"></i> <span data-i18n="skills.toolsOther">Tools &amp; Other</span></h3>
-            <ul>
-                <li><i class="devicon-github-original colored"></i> GitHub</li>
-                <li><i class="devicon-git-plain colored"></i> Git</li>
-                <li><i class="devicon-intellij-plain colored"></i> IntelliJ IDEA</li>
-                <li><i class="devicon-vscode-plain colored"></i> VS Code</li>
-                <li><i class="fas fa-project-diagram"></i> <span data-i18n="skills.agile">Agile, Scrum, Kanban</span></li>
-                <li><i class="fas fa-language"></i> <span data-i18n="skills.bilingual">Bilingual: English &amp; Spanish</span></li>
-                <li><i class="devicon-postman-plain colored"></i> Postman</li>
-                <li><i class="devicon-docker-plain colored"></i> Docker</li>
-                <li><i class="devicon-ubuntu-plain colored"></i> Linux Ubuntu</li>
-                <li><i class="fas fa-envelope-open-text"></i> Mailtrap</li>
+        <!-- ── Infra & Tools ── -->
+        <div class="skill-card">
+            <div class="skill-card-header">
+                <div class="skill-card-icon" aria-hidden="true">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <h3 class="skill-card-title" data-i18n="skills.toolsOther">Infra &amp; Tools</h3>
+            </div>
+            <ul class="skill-list">
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker / Compose
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <i class="devicon-nginx-plain colored" aria-hidden="true"></i> Nginx
+                        <span class="new-badge">new</span>
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <i class="devicon-ubuntu-plain colored" aria-hidden="true"></i> Linux / VPS
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name highlight">
+                        <i class="devicon-github-original colored" aria-hidden="true"></i> GitHub
+                        &nbsp;/&nbsp;
+                        <i class="devicon-git-plain colored" aria-hidden="true"></i> Git
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="devicon-vitejs-plain colored" aria-hidden="true"></i> Vite / Rolldown
+                        <span class="new-badge">new</span>
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="devicon-intellij-plain colored" aria-hidden="true"></i> IntelliJ IDEA
+                        &nbsp;·&nbsp;
+                        <i class="devicon-vscode-plain colored" aria-hidden="true"></i> VS Code
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="devicon-postman-plain colored" aria-hidden="true"></i> Postman
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                        <span data-i18n="skills.agile">Agile · Scrum · Kanban</span>
+                    </span>
+                </li>
+                <li class="skill-item">
+                    <span class="skill-dot" aria-hidden="true"></span>
+                    <span class="skill-name">
+                        <i class="fa-solid fa-language" aria-hidden="true"></i>
+                        <span data-i18n="skills.bilingual">Bilingual: English &amp; Spanish</span>
+                    </span>
+                </li>
             </ul>
         </div>
-    </div>
+
+    </div><!-- /.skills-grid -->
 </section>
+
+<hr class="section-divider">

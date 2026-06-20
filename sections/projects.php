@@ -1,219 +1,243 @@
-<section id="projects" class="projects-section">
+<section id="projects" class="section">
     <div id="projects-position"></div>
-    <h2 data-i18n="projects.title">Projects</h2>
 
-    <div class="projects-grid">
+    <p class="section-label" data-i18n="projects.eyebrow">Portfolio</p>
+    <h2 class="section-title" data-i18n="projects.title">Featured <span>projects</span></h2>
 
-        <!-- Project 6 – emecoms (Most recent) -->
-        <div class="project-card">
-            <img src="/pics/emecoms.png" alt="emecoms SEO agency website screenshot" class="project-img" loading="lazy">
+    <div class="projects-list">
 
-            <div class="project-card-content">
-                <h3 data-i18n="projects.p6.title">emecoms — Local SEO Agency Website</h3>
-                <p data-i18n="projects.p6.date">May 2026 – Present</p>
+        <!-- ── Project 1: emecoms ── -->
+        <article class="project-card">
+            <div class="project-thumb">
+                <img src="/pics/emecoms.png"
+                     alt="emecoms SEO agency website screenshot"
+                     loading="lazy">
+            </div>
 
-                <!-- emecoms chips -->
-                <div class="chip-row tech-list" aria-label="Technologies used">
-                    <span class="chip"><i class="devicon-angularjs-plain colored"></i> Angular</span>
-                    <span class="chip"><img src="https://analogjs.org/img/logos/analog-logo.svg" alt="Analog" style="width:14px;height:14px;vertical-align:middle;"> Analog</span>
-                    <span class="chip"><img src="/pics/astro-logo.svg" alt="Astro" style="width:14px;height:14px;vertical-align:middle;"> Astro</span>
-                    <span class="chip"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
-                    <span class="chip"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
-                    <span class="chip"><i class="devicon-vitejs-plain colored"></i> Vite</span>
-                    <span class="chip"><i class="devicon-spring-plain colored"></i> Spring Boot</span>
-                    <span class="chip"><i class="devicon-wordpress-plain colored"></i> WordPress</span>
-                    <span class="chip"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+            <div class="project-body">
+                <p class="project-meta" data-i18n="projects.p6.date">May 2026 – Present</p>
+                <h3 class="project-name" data-i18n="projects.p6.title">emecoms — Local SEO Agency</h3>
+
+                <div class="tags" aria-label="Technologies used">
+                    <span class="tag"><i class="devicon-angularjs-plain colored" aria-hidden="true"></i> Angular</span>
+                    <span class="tag"><img src="https://analogjs.org/img/logos/analog-logo.svg" alt="" aria-hidden="true" style="width:13px;height:13px;vertical-align:middle;"> Analog</span>
+                    <span class="tag"><img src="/pics/astro-logo.svg" alt="" aria-hidden="true" style="width:13px;height:13px;vertical-align:middle;"> Astro</span>
+                    <span class="tag"><i class="devicon-typescript-plain colored" aria-hidden="true"></i> TypeScript</span>
+                    <span class="tag"><i class="devicon-tailwindcss-plain colored" aria-hidden="true"></i> Tailwind</span>
+                    <span class="tag"><i class="devicon-vitejs-plain colored" aria-hidden="true"></i> Vite</span>
+                    <span class="tag"><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span>
+                    <span class="tag"><i class="devicon-wordpress-plain colored" aria-hidden="true"></i> WordPress</span>
+                    <span class="tag"><i class="devicon-mysql-plain colored" aria-hidden="true"></i> MySQL</span>
                 </div>
 
-                <!-- emecoms description (SSR fallback) -->
-                <p data-i18n="projects.p6.desc">
-                    Full-stack marketing site for a local SEO agency. Public-facing pages are built with Astro for near-perfect
-                    PageSpeed scores (98 mobile), while the interactive tools dashboard and live site auditor remain on Angular/Analog SSR.
-                    Features a Lighthouse-powered audit tool with transactional email delivery via Resend,
-                    a Google Search Console integration for connected clients, and a headless WordPress blog —
-                    all deployed via Docker Compose with nginx routing between the two frontends.
+                <p class="project-desc" data-i18n="projects.p6.desc">
+                    Full-stack marketing site for a local SEO agency. Public-facing pages are built with <strong>Astro for 98/100 PageSpeed mobile</strong>, while the interactive tools dashboard and live site auditor remain on Angular/Analog SSR. Features a Lighthouse-powered audit tool with transactional email via Resend, Google Search Console integration, and a headless WordPress blog — all deployed via Docker Compose with nginx routing between the two frontends.
                 </p>
 
-                <div class="project-links chip-row">
-                    <a class="chip chip-link" href="https://github.com/jrhendrix-dev/emecom" target="_blank" rel="noopener noreferrer">
+                <div class="project-links">
+                    <a class="btn btn-ghost"
+                       href="https://github.com/jrhendrix-dev/emecome"
+                       target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-github" aria-hidden="true"></i>
-                        <span class="label" data-i18n="projects.actions.github">View on GitHub</span>
+                        <span data-i18n="projects.actions.github">View on GitHub</span>
                     </a>
-                    <a class="chip chip-cta" href="https://emecoms.es" target="_blank" rel="noopener noreferrer">
+                    <a class="btn btn-primary"
+                       href="https://emecoms.es"
+                       target="_blank" rel="noopener noreferrer">
                         <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
-                        <span class="label" data-i18n="projects.actions.live">Live Site</span>
+                        <span data-i18n="projects.actions.live">Live Site</span>
                     </a>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <!-- Project 5 – GastroControl (In progress) -->
-        <div class="project-card">
-            <img src="/pics/GastroControl-logo.png" alt="GastroControl logo" class="project-img" loading="lazy">
+        <!-- ── Project 2: GastroControl ── -->
+        <article class="project-card">
+            <div class="project-thumb">
+                <img src="/pics/GastroControl-logo.png"
+                     alt="GastroControl restaurant operations platform"
+                     loading="lazy">
+            </div>
 
-            <div class="project-card-content">
-                <h3 data-i18n="projects.p5.title">GastroControl — Restaurant Operations Platform</h3>
-                <p data-i18n="projects.p5.date">December 2025 – April 18, 2026</p>
+            <div class="project-body">
+                <p class="project-meta" data-i18n="projects.p5.date">December 2025 – April 2026</p>
+                <h3 class="project-name" data-i18n="projects.p5.title">GastroControl — Restaurant Operations Platform</h3>
 
-                <div class="chip-row tech-list" aria-label="Technologies used">
-                    <span class="chip"><i class="devicon-java-plain colored"></i> Java</span>
-                    <span class="chip"><i class="devicon-spring-plain colored"></i> Spring Boot</span>
-                    <span class="chip"><i class="devicon-mysql-plain colored"></i> MySQL</span>
-                    <span class="chip"><i class="devicon-docker-plain colored"></i> Docker</span>
-                    <span class="chip"><i class="devicon-angularjs-plain colored"></i> Angular</span>
-                    <span class="chip"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
-                    <span class="chip"><i class="devicon-typescript-plain colored"></i> Typescript</span>
+                <div class="tags" aria-label="Technologies used">
+                    <span class="tag"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java</span>
+                    <span class="tag"><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span>
+                    <span class="tag"><i class="devicon-mysql-plain colored" aria-hidden="true"></i> MySQL</span>
+                    <span class="tag"><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</span>
+                    <span class="tag"><i class="devicon-angularjs-plain colored" aria-hidden="true"></i> Angular</span>
+                    <span class="tag"><i class="devicon-tailwindcss-plain colored" aria-hidden="true"></i> Tailwind</span>
+                    <span class="tag"><i class="devicon-typescript-plain colored" aria-hidden="true"></i> TypeScript</span>
                 </div>
 
-                <p data-i18n="projects.p5.desc">
-                    In-progress platform for restaurant operations: products, orders, and role-based access.
-                    Built with a clean architecture approach (DTOs/services) and database migrations (Flyway),
-                    designed to be fully reproducible in Docker from day one.
+                <p class="project-desc" data-i18n="projects.p5.desc">
+                    Platform for restaurant operations: products, orders, and role-based access. Built with a <strong>clean architecture</strong> approach (DTOs, services, Flyway migrations), fully Dockerized from day one.
                 </p>
 
-                <div class="project-links chip-row">
-                    <a class="chip chip-link" href="https://github.com/jrhendrix-dev/gastrocontrol" target="_blank" rel="noopener noreferrer">
+                <div class="project-links">
+                    <a class="btn btn-ghost"
+                       href="https://github.com/jrhendrix-dev/gastrocontrol"
+                       target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-github" aria-hidden="true"></i>
-                        <span class="label" data-i18n="projects.actions.github">View on GitHub</span>
+                        <span data-i18n="projects.actions.github">View on GitHub</span>
                     </a>
-
-                    <!-- Same tab: same-domain sub-path, no target="_blank" needed -->
-                    <a class="chip chip-cta" href="https://jonathan-hendrix.dev/gastrocontrol/">
+                    <a class="btn btn-primary"
+                       href="https://jonathan-hendrix.dev/gastrocontrol/">
                         <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
-                        <span class="label" data-i18n="projects.actions.live">Live Site</span>
+                        <span data-i18n="projects.actions.live">Live Site</span>
                     </a>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <!-- Project 4 – Business First Academy Overhaul -->
-        <div class="project-card">
-            <img src="/pics/BFE-Overhaul.png" alt="Screenshot of the new Business First Academy platform" class="project-img" loading="lazy">
+        <!-- ── Project 3: Business First Academy Overhaul ── -->
+        <article class="project-card">
+            <div class="project-thumb">
+                <img src="/pics/BFE-Overhaul.png"
+                     alt="Business First Academy platform screenshot"
+                     loading="lazy">
+            </div>
 
-            <div class="project-card-content">
-                <h3 data-i18n="projects.p4.title">Business First Academy – Complete Platform Overhaul</h3>
-                <p data-i18n="projects.p4.date">September 2025 - November 2025</p>
+            <div class="project-body">
+                <p class="project-meta" data-i18n="projects.p4.date">September 2025 – November 2025</p>
+                <h3 class="project-name" data-i18n="projects.p4.title">Business First Academy — Complete Platform Overhaul</h3>
 
-                <div class="chip-row tech-list" aria-label="Technologies used">
-                    <span class="chip"><i class="devicon-php-plain colored"></i> PHP 8</span>
-                    <span class="chip"><i class="devicon-symfony-plain"></i> Symfony</span>
-                    <span class="chip"><i class="devicon-angularjs-plain colored"></i> Angular</span>
-                    <span class="chip"><i class="devicon-mysql-plain colored"></i> MySQL</span>
-                    <span class="chip"><i class="devicon-docker-plain colored"></i> Docker</span>
-                    <span class="chip"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
-                    <span class="chip"><i class="devicon-typescript-plain colored"></i> Typescript</span>
+                <div class="tags" aria-label="Technologies used">
+                    <span class="tag"><i class="devicon-php-plain colored" aria-hidden="true"></i> PHP 8</span>
+                    <span class="tag"><i class="devicon-symfony-plain" aria-hidden="true"></i> Symfony</span>
+                    <span class="tag"><i class="devicon-angularjs-plain colored" aria-hidden="true"></i> Angular</span>
+                    <span class="tag"><i class="devicon-mysql-plain colored" aria-hidden="true"></i> MySQL</span>
+                    <span class="tag"><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</span>
+                    <span class="tag"><i class="devicon-tailwindcss-plain colored" aria-hidden="true"></i> Tailwind</span>
+                    <span class="tag"><i class="devicon-typescript-plain colored" aria-hidden="true"></i> TypeScript</span>
                 </div>
 
-                <p data-i18n="projects.p4.desc">
-                    Modern rewrite of the academy platform featuring a Symfony REST API and an Angular front-end.
-                    Includes JWT authentication, 2-Factor Authentication, Google login, Stripe payments, and
-                    role-based dashboards (admin, teacher, student).
-
-                    Fully Dockerized architecture (development and production), deployed to DigitalOcean using
-                    containerized services with HTTPS and a fully reproducible environment.
+                <p class="project-desc" data-i18n="projects.p4.desc">
+                    Modern rewrite featuring a <strong>Symfony REST API and Angular frontend</strong>. Includes JWT authentication, 2FA, Google login, Stripe payments, and role-based dashboards (admin, teacher, student). Fully Dockerized and deployed to DigitalOcean with HTTPS.
                 </p>
 
-                <div class="project-links chip-row">
-                    <a class="chip chip-link" href="https://github.com/jrhendrix-dev/business-first-overhaul" target="_blank" rel="noopener noreferrer">
+                <div class="project-links">
+                    <a class="btn btn-ghost"
+                       href="https://github.com/jrhendrix-dev/business-first-overhaul"
+                       target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-github" aria-hidden="true"></i>
-                        <span class="label" data-i18n="projects.actions.github">View on GitHub</span>
+                        <span data-i18n="projects.actions.github">View on GitHub</span>
                     </a>
-                    <a class="chip chip-cta" href="https://jonathan-hendrix.dev/businessfirst/">
+                    <a class="btn btn-primary"
+                       href="https://jonathan-hendrix.dev/businessfirst/">
                         <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
-                        <span class="label" data-i18n="projects.actions.live">Live Site</span>
+                        <span data-i18n="projects.actions.live">Live Site</span>
                     </a>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <!-- Project 3 – Bambina -->
-        <div class="project-card">
-            <img src="/pics/Bambina.png" alt="Bambina platform screenshot" class="project-img" loading="lazy">
-
-            <div class="project-card-content">
-                <h3 data-i18n="projects.p3.title">Bambina – Restaurant & E-Commerce Platform (Internship Team Project)</h3>
-                <p data-i18n="projects.p3.date">July 2025 - September 2025</p>
-
-                <div class="chip-row tech-list" aria-label="Technologies used">
-                    <span class="chip"><i class="devicon-php-plain colored"></i> PHP 8</span>
-                    <span class="chip"><i class="devicon-symfony-plain"></i> Symfony</span>
-                    <span class="chip"><i class="devicon-angularjs-plain colored"></i> Angular</span>
-                    <span class="chip"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
-                    <span class="chip"><i class="devicon-docker-plain colored"></i> Docker</span>
-                    <span class="chip"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
-                    <span class="chip"><i class="devicon-typescript-plain colored"></i> Typescript</span>
-                </div>
-
-                <p data-i18n="projects.p3.desc">
-                    Collaborative platform built during my CodeArts internship for restaurant management and online sales.
-                    I contributed to both the backend and frontend, but specially the backend which I developed entirely on my own delivering 50+ REST endpoints, implementing Clean
-                    Architecture layers (DTOs, Mappers, Managers), and building Angular admin features and UI components.
-                </p>
-
-                <div class="project-links chip-row"></div>
-            </div>
-        </div>
-
-        <!-- Project 2 – Task Manager -->
-        <div class="project-card project-card--with-demo">
-            <div class="project-main">
-                <img src="/pics/TaskManager.png" alt="Task Manager screenshot" class="project-img" loading="lazy">
-
-                <div class="project-card-content">
-                    <h3 data-i18n="projects.p2.title">Task Manager</h3>
-                    <p data-i18n="projects.p2.date">May 2025</p>
-
-                    <div class="chip-row tech-list" aria-label="Technologies used">
-                        <span class="chip"><i class="devicon-java-plain colored"></i> Java</span>
-                        <span class="chip"><i class="devicon-spring-plain colored"></i> Spring Boot</span>
-                        <span class="chip"><i class="devicon-mysql-plain colored"></i> MySQL</span>
-                    </div>
-
-                    <p data-i18n="projects.p2.desc">
-                        Compact task manager where you can add, complete, and delete items. Designed as a clean MVC example with a database layer and a minimal, intuitive interface.
-                    </p>
-
-                    <div class="project-links chip-row">
-                        <a class="chip chip-link" href="https://github.com/jrhendrix-dev/spring-task-manager" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-github" aria-hidden="true"></i>
-                            <span class="label" data-i18n="projects.actions.github">View on GitHub</span>
-                        </a>
-                        <button id="demoButton" class="chip chip-cta" type="button">
-                            <i class="fa-solid fa-play" aria-hidden="true"></i>
-                            <span class="label" data-i18n="projects.actions.demo">Live Demo</span>
-                        </button>
-                    </div>
-                </div>
+        <!-- ── Project 4: Bambina ── -->
+        <article class="project-card">
+            <div class="project-thumb">
+                <img src="/pics/Bambina.png"
+                     alt="Bambina restaurant and e-commerce platform screenshot"
+                     loading="lazy">
             </div>
 
-            <div class="demo-card" id="live-demo"></div>
-        </div>
+            <div class="project-body">
+                <p class="project-meta" data-i18n="projects.p3.date">July 2025 – September 2025</p>
+                <h3 class="project-name" data-i18n="projects.p3.title">Bambina — Restaurant &amp; E-Commerce Platform</h3>
 
-        <!-- Project 1 – English Academy Platform (Legacy PHP) -->
-        <div class="project-card">
-            <img src="/pics/EnglishAcademy.png" alt="Screenshot of the academy's original PHP admin panel" class="project-img" loading="lazy">
-
-            <div class="project-card-content">
-                <h3 data-i18n="projects.p1.title">English Academy Platform (Legacy PHP)</h3>
-                <p data-i18n="projects.p1.date">March 2022 - July 2022</p>
-
-                <div class="chip-row tech-list" aria-label="Technologies used">
-                    <span class="chip"><i class="devicon-php-plain colored"></i> PHP</span>
-                    <span class="chip"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                <div class="tags" aria-label="Technologies used">
+                    <span class="tag"><i class="devicon-php-plain colored" aria-hidden="true"></i> PHP 8</span>
+                    <span class="tag"><i class="devicon-symfony-plain" aria-hidden="true"></i> Symfony</span>
+                    <span class="tag"><i class="devicon-angularjs-plain colored" aria-hidden="true"></i> Angular</span>
+                    <span class="tag"><i class="devicon-postgresql-plain colored" aria-hidden="true"></i> PostgreSQL</span>
+                    <span class="tag"><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</span>
+                    <span class="tag"><i class="devicon-tailwindcss-plain colored" aria-hidden="true"></i> Tailwind</span>
+                    <span class="tag"><i class="devicon-typescript-plain colored" aria-hidden="true"></i> TypeScript</span>
                 </div>
 
-                <p data-i18n="projects.p1.desc">
-                    Original PHP admin panel used to manage classes, students, schedules, enrollments, and basic reporting. This was the internal production tool before rebuilding the entire platform with Symfony and Angular.
+                <p class="project-desc" data-i18n="projects.p3.desc">
+                    Collaborative platform built during my CodeArts internship. I delivered <strong>50+ REST endpoints</strong>, implemented Clean Architecture layers (DTOs, Mappers, Managers), and built Angular admin features and UI components.
                 </p>
 
-                <div class="project-links chip-row">
-                    <a class="chip chip-link" href="https://github.com/jrhendrix-dev/Business-First-English-Center-PHP" target="_blank" rel="noopener noreferrer">
+                <!-- No public links for this project -->
+            </div>
+        </article>
+
+        <!-- ── Project 5: Task Manager ── -->
+        <article class="project-card project-card--with-demo">
+            <div class="project-thumb">
+                <img src="/pics/TaskManager.png"
+                     alt="Task Manager Spring Boot screenshot"
+                     loading="lazy">
+            </div>
+
+            <div class="project-body">
+                <p class="project-meta" data-i18n="projects.p2.date">May 2025</p>
+                <h3 class="project-name" data-i18n="projects.p2.title">Task Manager</h3>
+
+                <div class="tags" aria-label="Technologies used">
+                    <span class="tag"><i class="devicon-java-plain colored" aria-hidden="true"></i> Java</span>
+                    <span class="tag"><i class="devicon-spring-plain colored" aria-hidden="true"></i> Spring Boot</span>
+                    <span class="tag"><i class="devicon-mysql-plain colored" aria-hidden="true"></i> MySQL</span>
+                </div>
+
+                <p class="project-desc" data-i18n="projects.p2.desc">
+                    Compact task manager to add, complete, and delete items. A clean <strong>MVC example</strong> with a database layer and minimal, intuitive interface.
+                </p>
+
+                <div class="project-links">
+                    <a class="btn btn-ghost"
+                       href="https://github.com/jrhendrix-dev/spring-task-manager"
+                       target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-github" aria-hidden="true"></i>
-                        <span class="label" data-i18n="projects.actions.github">View on GitHub</span>
+                        <span data-i18n="projects.actions.github">View on GitHub</span>
+                    </a>
+                    <button id="demoButton" class="btn btn-primary" type="button">
+                        <i class="fa-solid fa-play" aria-hidden="true"></i>
+                        <span data-i18n="projects.actions.demo">Live Demo</span>
+                    </button>
+                </div>
+
+                <!-- Demo embed (populated by JS) -->
+                <div class="demo-card" id="live-demo"></div>
+            </div>
+        </article>
+
+        <!-- ── Project 6: English Academy (Legacy PHP) ── -->
+        <article class="project-card">
+            <div class="project-thumb">
+                <img src="/pics/EnglishAcademy.png"
+                     alt="English Academy legacy PHP admin panel screenshot"
+                     loading="lazy">
+            </div>
+
+            <div class="project-body">
+                <p class="project-meta" data-i18n="projects.p1.date">March 2022 – July 2022</p>
+                <h3 class="project-name" data-i18n="projects.p1.title">English Academy Platform (Legacy PHP)</h3>
+
+                <div class="tags" aria-label="Technologies used">
+                    <span class="tag"><i class="devicon-php-plain colored" aria-hidden="true"></i> PHP</span>
+                    <span class="tag"><i class="devicon-mysql-plain colored" aria-hidden="true"></i> MySQL</span>
+                </div>
+
+                <p class="project-desc" data-i18n="projects.p1.desc">
+                    Original PHP admin panel used to manage classes, students, schedules, enrolments, and basic reporting. The internal production tool before the full Symfony/Angular rebuild.
+                </p>
+
+                <div class="project-links">
+                    <a class="btn btn-ghost"
+                       href="https://github.com/jrhendrix-dev/Business-First-English-Center-PHP"
+                       target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <span data-i18n="projects.actions.github">View on GitHub</span>
                     </a>
                 </div>
             </div>
-        </div>
+        </article>
 
-    </div>
+    </div><!-- /.projects-list -->
 </section>
+
+<hr class="section-divider">

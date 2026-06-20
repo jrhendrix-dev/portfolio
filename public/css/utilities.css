@@ -1,4 +1,107 @@
-/* Utilities */
-.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0 }
-.sr-only-focusable:active, .sr-only-focusable:focus{ position:static; width:auto; height:auto; margin:0; overflow:visible; clip:auto }
-body,html{ overflow-x:hidden } /* Prevent horizontal scroll */
+/* =============================================================
+   UTILITIES.CSS — Single-purpose helpers
+   ============================================================= */
+
+/* Availability badge */
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--color-emerald-bg);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: var(--radius-pill);
+    padding: 5px 14px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-emerald);
+    letter-spacing: 0.04em;
+}
+
+.availability-badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-emerald);
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+}
+
+/* Tag / tech pill */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    background: var(--color-emerald-bg);
+    border: 1px solid rgba(52, 211, 153, 0.18);
+    border-radius: var(--radius-pill);
+    padding: 4px 11px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-emerald);
+    letter-spacing: 0.03em;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+/* Info icon box */
+.info-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: var(--color-emerald-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: var(--color-emerald);
+    flex-shrink: 0;
+}
+
+/* Status dot (inline) */
+.status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-emerald);
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* Language bar */
+.lang-bar {
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(52, 211, 153, 0.12);
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.lang-bar-fill {
+    height: 100%;
+    background: var(--color-emerald);
+    border-radius: 2px;
+}
+
+/* "New" badge on skill items */
+.new-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--color-emerald-bg2);
+    color: var(--color-emerald);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
