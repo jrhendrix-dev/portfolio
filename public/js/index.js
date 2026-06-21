@@ -77,9 +77,8 @@ window.__cycleNext = scrollToNextSection;
 // Live demo toggle (Task Manager iframe)
 // ─────────────────────────────────────────────────────────────
 function toggleDemo() {
-    const demo = document.getElementById("live-demo");
-    const btn  = document.getElementById("demoButton");
-    if (!demo || !btn) return;
+    const btn = document.getElementById("demoButton");
+    if (!btn) return;
 
     const isSpanish = document.documentElement.lang?.startsWith("es");
     const labels = isSpanish
@@ -88,25 +87,66 @@ function toggleDemo() {
         : { open: '<i class="fa-solid fa-pause" aria-hidden="true"></i> Hide Demo',
             closed: '<i class="fa-solid fa-play" aria-hidden="true"></i> Live Demo' };
 
-    const isOpen = demo.classList.contains("open");
+    const card = btn.closest(".project-card");
+    if (!card) return;
 
-    if (!isOpen) {
-        if (!demo.dataset.loaded) {
-            const iframe = document.createElement("iframe");
-            iframe.src         = "https://task-manager-api-4axd.onrender.com/tasks";
-            iframe.width       = "100%";
-            iframe.height      = "600";
-            iframe.frameBorder = "0";
-            iframe.title       = isSpanish ? "Demo en vivo: Task Manager" : "Live Task Manager";
-            iframe.style.cssText = "margin-top:1rem;border-radius:8px;border:none;";
-            demo.appendChild(iframe);
-            demo.dataset.loaded = "true";
-        }
-        requestAnimationFrame(() => requestAnimationFrame(() => demo.classList.add("open")));
-        btn.innerHTML = labels.open;
-    } else {
-        demo.classList.remove("open");
+    let demoRow = document.getElementById("demo-row");
+
+    if (demoRow) {
+        // Collapse animation
+        demoRow.style.maxHeight = demoRow.scrollHeight + "px";
+        requestAnimationFrame(() => {
+            demoRow.style.maxHeight = "0";
+            demoRow.style.opacity = "0";
+            card.style.borderBottomLeftRadius = "";
+            card.style.borderBottomRightRadius = "";
+        });
+        demoRow.addEventListener("transitionend", () => demoRow.remove(), { once: true });
         btn.innerHTML = labels.closed;
+        card.style.borderBottomLeftRadius = "";
+        card.style.borderBottomRightRadius = "";
+    } else {
+        // Build the row
+        demoRow = document.createElement("div");
+        demoRow.id = "demo-row";
+        demoRow.style.cssText = `
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.45s ease, opacity 0.35s ease;
+            background: var(--color-card, #0d1525);
+            border: 1px solid rgba(52,211,153,0.2);
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            padding: 0 1.5rem;
+            margin-top: -12px;
+        `;
+
+        const iframe = document.createElement("iframe");
+        iframe.src         = "https://task-manager-api-4axd.onrender.com/tasks";
+        iframe.width       = "100%";
+        iframe.height      = "560";
+        iframe.frameBorder = "0";
+        iframe.title       = isSpanish ? "Demo en vivo: Task Manager" : "Live Task Manager";
+        iframe.style.cssText = "display:block;border:none;border-radius:8px;margin:1.5rem 0;";
+
+        demoRow.appendChild(iframe);
+        card.after(demoRow);
+
+        // Square off the card's bottom corners so it flows into the demo row
+        card.style.transition = "border-radius 0.45s ease";
+        card.style.borderBottomLeftRadius = "0";
+        card.style.borderBottomRightRadius = "0";
+
+        // Trigger slide-down
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                demoRow.style.maxHeight = demoRow.scrollHeight + 660 + "px";
+                demoRow.style.opacity = "1";
+            });
+        });
+
+        btn.innerHTML = labels.open;
     }
 }
 
