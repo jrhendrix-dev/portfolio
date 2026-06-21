@@ -9,7 +9,7 @@
         <!-- ── Project 1: emecoms ── -->
         <article class="project-card">
             <div class="project-thumb">
-                <img src="/pics/emecoms.png"
+                <img src="/pics/emecoms.webp"
                      alt="emecoms SEO agency website screenshot"
                      loading="lazy">
             </div>
@@ -54,7 +54,7 @@
         <!-- ── Project 2: GastroControl ── -->
         <article class="project-card">
             <div class="project-thumb">
-                <img src="/pics/GastroControl-logo.png"
+                <img src="/pics/GastroControl-logo.webp"
                      alt="GastroControl restaurant operations platform"
                      loading="lazy">
             </div>
@@ -96,7 +96,7 @@
         <!-- ── Project 3: Business First Academy Overhaul ── -->
         <article class="project-card">
             <div class="project-thumb">
-                <img src="/pics/BFE-Overhaul.png"
+                <img src="/pics/BFE-Overhaul.webp"
                      alt="Business First Academy platform screenshot"
                      loading="lazy">
             </div>
@@ -138,7 +138,7 @@
         <!-- ── Project 4: Bambina ── -->
         <article class="project-card">
             <div class="project-thumb">
-                <img src="/pics/Bambina.png"
+                <img src="/pics/Bambina.webp"
                      alt="Bambina restaurant and e-commerce platform screenshot"
                      loading="lazy">
             </div>

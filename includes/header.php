@@ -15,7 +15,7 @@
     <meta property="og:url"         content="https://jonathan-hendrix.dev/" />
     <meta property="og:title"       content="Jonathan Hendrix | Backend Developer — Seville, Spain" />
     <meta property="og:description" content="Full-Stack Developer based in Seville. Java Spring Boot, Angular, Astro, Docker. Available for work." />
-    <meta property="og:image"       content="https://jonathan-hendrix.dev/pics/profile.png" />
+    <meta property="og:image"       content="https://jonathan-hendrix.dev/pics/profile.webp" />
     <meta property="og:locale"      content="en_GB" />
     <meta property="og:site_name"   content="Jonathan Hendrix" />
 
@@ -23,7 +23,7 @@
     <meta name="twitter:card"        content="summary_large_image" />
     <meta name="twitter:title"       content="Jonathan Hendrix | Backend Developer — Seville, Spain" />
     <meta name="twitter:description" content="Full-Stack Developer based in Seville. Java Spring Boot, Angular, Astro, Docker." />
-    <meta name="twitter:image"       content="https://jonathan-hendrix.dev/pics/profile.png" />
+    <meta name="twitter:image"       content="https://jonathan-hendrix.dev/pics/profile.webp" />
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -35,7 +35,7 @@
                     "@id": "https://jonathan-hendrix.dev/#person",
                     "name": "Jonathan Hendrix",
                     "url": "https://jonathan-hendrix.dev",
-                    "image": "https://jonathan-hendrix.dev/pics/profile.png",
+                    "image": "https://jonathan-hendrix.dev/pics/profile.webp",
                     "jobTitle": "Full-Stack Developer",
                     "description": "Backend Developer based in Seville, Spain, specialising in Java Spring Boot, Angular, Astro, and scalable web applications.",
                     "email": "jrhendrixdev@gmail.com",
@@ -65,16 +65,26 @@
 
     <link rel="icon" type="image/png" href="/logo/favicon.png">
 
-    <!-- Preconnect for performance -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-    <!-- FontAwesome -->
-    <script src="https://kit.fontawesome.com/b9be0d536e.js" crossorigin="anonymous"></script>
-    <!-- Normalize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <!-- Devicon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!-- Google Fonts — non-blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
+
+    <!-- Normalize — non-blocking -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"></noscript>
+
+    <!-- Devicon — non-blocking -->
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"></noscript>
+
+    <!-- FontAwesome — deferred -->
+    <script src="https://kit.fontawesome.com/b9be0d536e.js" crossorigin="anonymous" defer></script>
 
     <!-- Portfolio CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -204,7 +214,7 @@
 
         <!-- Right: photo -->
         <div class="hero-image">
-            <img src="/pics/profile.png" alt="Jonathan Hendrix — Backend Developer" />
+            <img src="/pics/profile.webp" alt="Jonathan Hendrix — Backend Developer" />
             <!-- Stack pills shown below photo on desktop -->
             <div class="hero-stack" aria-label="Core technologies">
                 <span class="tag">Java</span>
